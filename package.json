@@ -15,7 +15,7 @@
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://taedonn.github.io/resume",
+  "homepage": "https://resume.taedonn.com",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

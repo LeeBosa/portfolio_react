@@ -1,6 +1,6 @@
 # Resume
 
-Live Demo : [https://taedonn.github.io/resume](https://taedonn.github.io/resume)
+Live Demo : [https://resume.taedonn.com](https://resume.taedonn.com)
 
 [![Node Version](https://img.shields.io/badge/featured%20on-Node%20%4016.13.2-%2368a063)](#) [![NPM Version](https://img.shields.io/badge/featured%20on-NPM%20%408.1.2-%23cc3534)](#)
 
@@ -23,16 +23,16 @@ Tae Lee | GitHub @ taedonn | FE & ID
 
 ## 포트폴리오 바로가기 :
 
-포트폴리오 : https://taedonn.github.io/portfolio
+포트폴리오 : https://portfolio.taedonn.com
 
-프론트엔드 개발 : https://taedonn.github.io/portfolio/sub/project.html?pageType=1
+프론트엔드 개발 : https://portfolio.taedonn.com/sub/project.html?pageType=1
 
-제품 디자인 : https://taedonn.github.io/portfolio/sub/project.html?pageType=2
+제품 디자인 : https://portfolio.taedonn.com/sub/project.html?pageType=2
 
 &nbsp;
 
 ## 연락처 바로가기 :
 
-바로가기 : https://taedonn.github.io/portfolio/sub/contacts.html
+바로가기 : https://portfolio.taedonn.com/sub/contacts.html
 
 이메일 : grandsky95@hotmail.com
