@@ -47,17 +47,17 @@
     font-size: 20px;
     font-weight: 500;
     color: #35363A;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 .index_left .profile_name h3 {
     font-size: 16px;
     font-weight: 400;
-    color: #646568;
+    color: #97989C;
 }
 
 /* 오른쪽 */
 .index_right {
-    width: calc(100% - 300px);
+    width: calc(100% - 280px);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -76,7 +76,7 @@
 }
 .index_right h2 span {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1;
     padding-bottom: 2px;
     border-bottom: 1px solid #646568;
@@ -103,19 +103,6 @@
     border-left: 6px solid #35363A;
     border-right: 6px solid transparent;
 }
-.index_right .title span {
-    font-size: 20px;
-    font-weight: 300;
-    margin-left: 12px;
-    color: #646568;
-}
-.index_right .title svg {
-    width: 28px;
-    height: 28px;
-    margin-left: 12px;
-    transform: translateY(2px);
-    fill: #35363A;
-}
 .index_right .skills_list {
     display: flex;
     flex-flow: row wrap;
@@ -127,14 +114,15 @@
 .index_right .skills_list span {
     height: 32px;
     border-radius: 16px;
-    background-color: #E9EAEE;
+    background-color: #F6F7F8;
+    color: #646568;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     font-size: 12px;
     font-weight: 400;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
     padding: 0 16px;
     padding-bottom: 1px;
     margin-right: 8px;
@@ -162,32 +150,35 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #E9EAEE;
+    background-color: #35363A;
 }
 .index_right .company .company_name svg {
     width: 32px;
     height: 32px;
-    fill: #646568;
+    fill: #F6F7F8;
+    fill: #FFF;
 }
 .index_right .company .company_name p {
     font-size: 24px;
+    font-weight: 500;
     line-height: 1;
     margin-bottom: 2px;
     margin-left: 20px;
 }
 .index_right .company .company_name p span {
     font-size: 16px;
+    font-weight: 400;
     margin-left: 12px;
-    color: #646568;
+    color: #35363A;
 }
 .index_right .company .company_info {
-    margin-top: 16px;
-    padding-left: 40px;
+    margin-top: 20px;
+    padding-left: 32px;
 }
 .index_right .company .company_info > li {
     list-style: square;
     font-size: 20px;
-    margin-top: 16px;
+    margin-top: 20px;
 }
 .index_right .company .company_info > li:first-of-type {
     margin-top: 0;
@@ -228,11 +219,6 @@
 }
 
 /* 반응형 */
-@media screen and ( max-width: 1400px ) {
-    .index_right {
-        padding: 60px;
-    }
-}
 @media screen and ( max-width: 1080px ) {
     /* 공통값 */
     .main_index {
