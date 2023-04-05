@@ -8,34 +8,67 @@ function Main() {
           <img src='https://i.ibb.co/GR9QpsK/profile.png' alt='프로필 사진'></img>
         </div>
         <div className='profile_name'>
-          <h2>taedonn</h2>
+          <h2>taedonn.</h2>
           <h3>이태호</h3>
         </div>
         <div className='profile_link'>
           <h2>사이트 바로가기</h2>
           <h3><a href='https://github.com/taedonn' target='_blank' rel='noreferrer'>⭐ 깃허브</a></h3>
-          <h3><a href='https://github.com/taedonn' target='_blank' rel='noreferrer'>👋 블로그</a></h3>
-          <h3><a href='https://github.com/taedonn' target='_blank' rel='noreferrer'>👋 이력서</a></h3>
-          <h3><a href='https://github.com/taedonn' target='_blank' rel='noreferrer'>👨‍💻 포트폴리오</a></h3>
+          <h3><a href='https://taedonn.tistory.com' target='_blank' rel='noreferrer'>👋 블로그</a></h3>
+          <h3><a href='https://portfolio.taedonn.com' target='_blank' rel='noreferrer'>👨‍💻 포트폴리오</a></h3>
+        </div>
+        <div className='profile_info'>
+          <h2>연락처 정보</h2>
+          <h3>
+            <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg></span>
+            이태호 / TAE HO LEE
+          </h3>
+          <h3>
+            <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg></span>
+            서울시 용산구
+          </h3>
+          <h3>
+            <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zM6 10h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1 0-1z"/></svg></span>
+            1995년생
+          </h3>
+          <h3>
+            <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/></svg></span>
+            taedonn@outlook.com
+          </h3>
         </div>
       </div>
       <div className='index_right'>
         <div className='title'>PROFILE</div>
-        <h2>
+        <div className='hashtag'>
           <span>#프론트엔드</span>
           <span>#개발자</span>
           <span>#ISTJ</span>
           <span>#서울</span>
           <span>#토론토</span>
           <span>#OCADU</span>
-        </h2>
+        </div>
+        <div className='sub_title sub_title_school'>
+          <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/><path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/></svg></div>
+          <p>OCAD University<span>2013.09 ~ 2019.09</span></p>
+        </div>
+        <ul className='list list_school'>
+          <li>학력 정보
+            <ul className='sub_list'>
+              <li><p>지역</p> 북미 온타리오주 토론토</li>
+              <li><p>전공</p> Industrial Design</li>
+              <li><p>학위</p> Bachelor's Degree</li>
+            </ul>
+          </li>
+        </ul>
         <div className='title'>SKILLS</div>
-        <div className='skills_list'>
+        <div className='sub_title sub_title_skills_1'>
+          <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/></svg></div>
+          <p>프론트엔드 개발<span>2021.04 ~</span></p>
+        </div>
+        <div className='skills skills_1'>
           <span>HTML</span>
           <span>CSS</span>
           <span>SASS</span>
-          <span>SCSS</span>
-          <span>Markdown</span>
           <span>JavaScript</span>
           <span>TypeScript</span>
           <span>jQuery</span>
@@ -49,36 +82,46 @@ function Main() {
           <span>Git</span>
           <span>GitHub</span>
         </div>
+        <div className='sub_title sub_title_skills_2'>
+          <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M12.433 10.07C14.133 10.585 16 11.15 16 8a8 8 0 1 0-8 8c1.996 0 1.826-1.504 1.649-3.08-.124-1.101-.252-2.237.351-2.92.465-.527 1.42-.237 2.433.07zM8 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
+          <p>제품 디자인<span>2013.09 ~</span></p>
+        </div>
+        <div className='skills skills_2'>
+          <span>PhotoShop</span>
+          <span>Illustrator</span>
+          <span>Figma</span>
+          <span>Rhinoceros</span>
+          <span>SolidWorks</span>
+          <span>KeyShot</span>
+        </div>
         <div className='title'>EXPERIENCE</div>
-        <div className='company_list'>
-          <div className='company'>
-            <div className='company_name'>
-              <div className='company_logo'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15 .5a.5.5 0 0 0-.724-.447l-8 4A.5.5 0 0 0 6 4.5v3.14L.342 9.526A.5.5 0 0 0 0 10v5.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V14h1v1.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V.5ZM2 11h1v1H2v-1Zm2 0h1v1H4v-1Zm-1 2v1H2v-1h1Zm1 0h1v1H4v-1Zm9-10v1h-1V3h1ZM8 5h1v1H8V5Zm1 2v1H8V7h1ZM8 9h1v1H8V9Zm2 0h1v1h-1V9Zm-1 2v1H8v-1h1Zm1 0h1v1h-1v-1Zm3-2v1h-1V9h1Zm-1 2h1v1h-1v-1Zm-2-4h1v1h-1V7Zm3 0v1h-1V7h1Zm-2-2v1h-1V5h1Zm1 0h1v1h-1V5Z"/></svg></div>
-              <p>(주)아이클레이브<span>2021.12 ~ 현재</span></p>
-            </div>
-            <ul className='company_info'>
-              <li>온라인 서비스 운영
-                <ul className='company_info_sub'>
-                  <li>로보MD 사이트 운영 관리<span>2021.12 ~ 현재</span></li>
-                  <li>로보MD 사이트 리뉴얼<span>2022.01 ~ 2022.03</span></li>
-                  <li>로보MD 회원가입페이지 리뉴얼<span>2022.10 ~ 2022.11</span></li>
-                </ul>
-              </li>
-              <li>자동 배너 제작 솔루션 운영
-                <ul className='company_info_sub'>
-                  <li>배너 템플릿 제작 관리<span>2021.12 ~ 현재</span></li>
-                  <li>배너 스크립트 리팩토링<span>2023.01 ~ 2023.02</span></li>
-                  <li>배너 관리자 페이지 제작<span>2023.04 ~ 현재</span></li>
-                </ul>
-              </li>
-              <li>진열 자동운영 솔루션 개발 참여
-                <ul className='company_info_sub'>
-                  <li>진열 스크립트 개발<span>2022.03 ~ 2022.10</span></li>
-                  <li>진열 관리자 페이지 제작<span>2022.03 ~ 2022.10</span></li>
-                </ul>
-              </li>
-            </ul>
+        <div className='company'>
+          <div className='sub_title sub_title_company'>
+            <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h3v-3.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V16h3a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H3Zm1 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5ZM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM7.5 5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM4.5 8h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5Z"/></svg></div>
+            <p>(주)아이클레이브<span>2021.12 ~ 현재</span></p>
           </div>
+          <ul className='list'>
+            <li>온라인 서비스 운영
+              <ul className='sub_list'>
+                <li>로보MD 사이트 운영 관리<span>2021.12 ~ 현재</span></li>
+                <li>로보MD 사이트 리뉴얼<span>2022.01 ~ 2022.03</span></li>
+                <li>로보MD 회원가입페이지 리뉴얼<span>2022.10 ~ 2022.11</span></li>
+              </ul>
+            </li>
+            <li>자동 배너 제작 솔루션 운영
+              <ul className='sub_list'>
+                <li>배너 템플릿 제작 관리<span>2021.12 ~ 현재</span></li>
+                <li>배너 스크립트 리팩토링<span>2023.01 ~ 2023.02</span></li>
+                <li>배너 관리자 페이지 제작<span>2023.04 ~ 현재</span></li>
+              </ul>
+            </li>
+            <li>진열 자동운영 솔루션 개발 참여
+              <ul className='sub_list'>
+                <li>진열 스크립트 개발<span>2022.03 ~ 2022.10</span></li>
+                <li>진열 관리자 페이지 제작<span>2022.03 ~ 2022.10</span></li>
+              </ul>
+            </li>
+          </ul>
         </div>
         <div className='copyright'>
           Copyright {new Date().getFullYear()}. taedonn, all rights reserved.<br/>

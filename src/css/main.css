@@ -20,7 +20,8 @@
     justify-content: flex-start;
     align-items: center;
     background-color: #F6F7F8;
-    padding: 40px 40px;
+    padding: 40px;
+    padding-bottom: 0;
 }
 .index_left .img_wrap {
     width: 160px;
@@ -55,26 +56,64 @@
     font-weight: 400;
     color: #97989C;
 }
-.index_left .profile_link {
+.index_left .profile_link, .index_left .profile_info {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-bottom: 52px;
 }
-.index_left .profile_link h2 {
+.index_left .profile_link h2, .index_left .profile_info h2 {
     font-size: 15px;
     font-weight: 500;
     color: #35363A;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
-.index_left .profile_link h3 {
+.index_left .profile_link h3, .index_left .profile_info h3 {
     font-size: 14px;
     font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
-.index_left .profile_link h3 a {
+.index_left .profile_link h3:last-of-type, .index_left .profile_info h3:last-of-type {
+    margin-bottom: 0;
+}
+.index_left .profile_link h3 a, .index_left .profile_info h3 {
     color: #646568;
+}
+.index_left .profile_info {
+    margin-bottom: 0;
+}
+.index_left .profile_info h3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.index_left .profile_info h3 span {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #E9EAEE;
+    margin-right: 8px;
+}
+.index_left .profile_info h3 svg {
+    width: 14px;
+    fill: #646568;
+}
+.index_left .profile_info h3:nth-of-type(2) svg {
+    width: 12px;
+}
+.index_left .profile_info h3:nth-of-type(3) svg {
+    width: 11px;
+}
+.index_left .profile_info h3:nth-of-type(4) svg {
+    width: 12px;
 }
 
 /* 오른쪽 */
@@ -88,24 +127,8 @@
     padding-bottom: 40px;
     color: #35363A;
 }
-.index_right h2 {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 14px;
-    margin-bottom: 80px;
-}
-.index_right h2 span {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1;
-    padding-bottom: 2px;
-    border-bottom: 1px solid #646568;
-    color: #646568;
-    margin-right: 12px;
-    margin-top: 6px;
-}
+
+/* 제목 스타일 */
 .index_right .title {
     width: 100%;
     position: relative;
@@ -125,18 +148,127 @@
     border-left: 6px solid #35363A;
     border-right: 6px solid transparent;
 }
-.index_right .skills_list {
+
+/* 해시태그 스타일 */
+.index_right .hashtag {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-top: 8px;
+    margin-top: 14px;
+}
+.index_right .hashtag span {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #646568;
+    color: #646568;
+    margin-right: 12px;
+    margin-top: 6px;
+}
+
+/* 소제목 스타일 */
+.index_right .sub_title {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #35363A;
+}
+.index_right .sub_title_school {
+    margin-top: 20px;
+}
+.index_right .sub_title_skills_1 {
+    margin-top: 20px;
+}
+.index_right .sub_title div {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #35363A;
+}
+.index_right .sub_title svg {
+    width: 28px;
+    fill: #FFF;
+}
+.index_right .sub_title_school svg {
+    width: 32px;
+}
+.index_right .sub_title_skills_2 svg {
+    width: 26px;
+}
+.index_right .sub_title p {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1;
+    margin-left: 20px;
+    margin-bottom: 2px;
+}
+.index_right .sub_title span {
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 12px;
+}
+
+/* 목록 스타일 */
+.index_right .list {
+    margin-top: 20px;
+    padding-left: 32px;
+}
+.index_right .list_school {
     margin-bottom: 80px;
 }
-.index_right .skills_list span {
+.index_right .list > li {
+    list-style: square;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.index_right .list > li:last-of-type {
+    margin-bottom: 0;
+}
+.index_right .sub_list {
+    padding-left: 24px;
+}
+.index_right .sub_list > li {
+    list-style: circle;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 8px;
+    color: #646568;
+}
+.index_right .sub_list > li:first-of-type {
+    margin-top: 8px;
+}
+.index_right .sub_list > li p {
+    display: inline-block;
+    margin-right: 6px;
+    color: #35363A;
+}
+.index_right .sub_list > li span {
+    font-size: 14px;
+    margin-left: 10px;
+    color: #646568;
+}
+
+.index_right .skills {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 28px;
+}
+.index_right .skills_2 {
+    margin-bottom: 80px;
+}
+.index_right .skills span {
     height: 32px;
     border-radius: 16px;
-    background-color: #F6F7F8;
+    background-color: #E9EAEE;
     color: #646568;
     display: flex;
     flex-direction: row;
@@ -150,78 +282,9 @@
     margin-right: 8px;
     margin-top: 12px;
 }
-.index_right .company_list {
-    width: 100%;
-    margin-top: 20px;
-}
 .index_right .company {
     width: 100%;
-}
-.index_right .company .company_name {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    border: 1px solid #35363A;
-}
-.index_right .company .company_name .company_logo {
-    width: 72px;
-    height:72px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #35363A;
-}
-.index_right .company .company_name svg {
-    width: 32px;
-    height: 32px;
-    fill: #F6F7F8;
-    fill: #FFF;
-}
-.index_right .company .company_name p {
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 1;
-    margin-bottom: 2px;
-    margin-left: 20px;
-}
-.index_right .company .company_name p span {
-    font-size: 16px;
-    font-weight: 400;
-    margin-left: 12px;
-    color: #35363A;
-}
-.index_right .company .company_info {
     margin-top: 20px;
-    padding-left: 32px;
-}
-.index_right .company .company_info > li {
-    list-style: square;
-    font-size: 20px;
-    margin-top: 20px;
-}
-.index_right .company .company_info > li:first-of-type {
-    margin-top: 0;
-}
-.index_right .company .company_info_sub {
-    padding-left: 24px;
-}
-.index_right .company .company_info_sub > li {
-    list-style: circle;
-    font-size: 16px;
-    font-weight: 300;
-    margin-top: 8px;
-    color: #646568;
-}
-.index_right .company .company_info_sub > li:first-of-type {
-    margin-top: 8px;
-}
-.index_right .company .company_info_sub > li span {
-    font-size: 14px;
-    margin-left: 10px;
-    color: #646568;
 }
 
 /* 저작권 */
@@ -229,9 +292,9 @@
     width: 100%;
     font-size: 14px;
     font-weight: 300;
-    color: #646568;
     margin-top: 80px;
     text-align: center;
+    color: #646568;
 }
 .index_right .copyright a {
     display: inline-block;
@@ -252,22 +315,60 @@
         width: 100%;
         height: auto;
         position: relative;
+        padding: 40px;
     }
-    .index_left img {
-        width: 100%;
-        height: 480px;
+    .index_left .img_wrap {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 12px;
     }
-    .index_left .copyright {
-        left: 12px;
-        bottom: 12px;
+    .index_left .profile_name {
+        margin-bottom: 40px;
+    }
+    .index_left .profile_name h2 {
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+    .index_left .profile_name h3 {
+        font-size: 13px;
+    }
+    .index_left .profile_link {
+        margin-bottom: 40px;
+    }
+    .index_left .profile_link h2, .index_left .profile_info h2 {
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+    .index_left .profile_link h3, .index_left .profile_info h3 {
         font-size: 12px;
+    }
+    .index_left .profile_info h3 {
+        margin-bottom: 10px;
+    }
+    .index_left .profile_info h3 span {
+        width: 20px;
+        height: 20px;
+    }
+    .index_left .profile_info h3 svg {
+        width: 12px;
+    }
+    .index_left .profile_info h3:nth-of-type(2) svg {
+        width: 10px;
+    }
+    .index_left .profile_info h3:nth-of-type(3) svg {
+        width: 9px;
+    }
+    .index_left .profile_info h3:nth-of-type(4) svg {
+        width: 10px;
     }
 
     /* 오른쪽 */
     .index_right {
         width: 100%;
-        padding: 60px 40px;
+        padding: 40px;
     }
+
+    /* 제목 스타일 */
     .index_right .title {
         font-size: 26px;
         padding: 4px 12px;
@@ -282,58 +383,83 @@
         height: 24px;
         margin-left: 8px;
     }
-    .index_right h2 {
+
+    /* 소제목 스타일 */
+    .index_right .sub_title_school {
+        margin-top: 12px;
+    }
+    .index_right .sub_title_skills_1 {
+        margin-top: 16px;
+    }
+    .index_right .sub_title div {
+        width: 52px;
+        height: 52px;
+    }
+    .index_right .sub_title svg {
+        width: 24px;
+    }
+    .index_right .sub_title_school svg {
+        width: 26px;
+    }
+    .index_right .sub_title_skills_2 svg {
+        width: 22px;
+    }
+    .index_right .sub_title p {
+        font-size: 18px;
+        margin-left: 16px;
+    }
+    .index_right .sub_title span {
+        font-size: 12px;
+    }
+
+    /* 해시태그 스타일 */
+    .index_right .hashtag {
         margin-top: 6px;
     }
-    .index_right h2 span {
+    .index_right .hashtag span {
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    /* 목록 스타일 */
+    .index_right .list {
+        margin-top: 12px;
+        padding-left: 28px;
+    }
+    .index_right .list_school {
+        margin-bottom: 52px;
+    }
+    .index_right .list > li {
+        font-size: 16px;
+    }
+    .index_right .sub_list {
+        padding-left: 20px;
+    }
+    .index_right .sub_list > li {
         font-size: 14px;
     }
-    .index_right .skills_list {
-        margin-top: 4px;
+    .index_right .sub_list > li span {
+        font-size: 12px;
+        margin-left: 8px;
     }
-    .index_right .skills_list span {
+
+    .index_right .skills {
+        margin-bottom: 20px;
+    }
+    .index_right .skills_2 {
+        margin-bottom: 52px;
+    }
+    .index_right .skills span {
         height: 28px;
         border-radius: 14px;
-        font-size: 12px;
+        font-size: 10px;
         padding: 0 14px;
+        padding-bottom: 1px;
         margin-right: 6px;
         margin-top: 8px;
     }
-    .index_right .company_list {
+    .index_right .company {
         margin-top: 14px;
-    }
-    .index_right .company .company_name .company_logo {
-        width: 56px;
-        height: 56px;
-    }
-    .index_right .company .company_name svg {
-        width: 24px;
-        height: 24px;
-    }
-    .index_right .company .company_name p {
-        font-size: 20px;
-        margin-left: 16px;
-    }
-    .index_right .company .company_name p span {
-        font-size: 14px;
-        margin-left: 8px;
-    }
-    .index_right .company .company_info {
-        padding-left: 32px;
-    }
-    .index_right .company .company_info > li {
-        font-size: 16px;
-        margin-top: 14px;
-    }
-    .index_right .company .company_info_sub {
-        padding-left: 20px;
-    }
-    .index_right .company .company_info_sub > li {
-        font-size: 14px;
-    }
-    .index_right .company .company_info_sub > li span {
-        font-size: 12px;
-        margin-left: 8px;
     }
 
     /* 저작권 */
@@ -343,23 +469,17 @@
 }
 @media screen and ( max-width: 640px ) {
     /* 왼쪽 */
-    .index_left img {
-        height: 360px;
+    .index_left {
+        padding: 32px 20px;
     }
 
     /* 오른쪽 */
     .index_right {
-        padding: 40px 20px;
-    }
-    .index_right h2 {
-        margin-bottom: 60px;
-    }
-    .index_right .skills_list {
-        margin-bottom: 60px;
+        padding: 32px 20px;
     }
 
     /* 저작권 */
     .index_right .copyright {
-        margin-top: 60px;
+        margin-top: 52px;
     }
 }
