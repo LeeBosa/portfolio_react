@@ -7,6 +7,7 @@ html, body, pre, code, kbd, samp {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.25;
+    letter-spacing: 0.4px;
     word-break: keep-all;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -14,11 +15,3 @@ a { text-decoration: none; }
 ul, li { list-style: none; }
 input { border: none; outline: none; background-color: transparent; }
 select, option, button { border: none; outline: none; cursor: pointer; background-color: transparent; }
-
-/* 유튜브 넓이,높이 */
-:root {
-    --video-width: 100vw;
-    --video-height: 100vh;
-}
-@media (min-aspect-ratio: 16/9) { :root { --video-height: 56.25vw; } }
-@media (max-aspect-ratio: 16/9) { :root { --video-width: 177.78vh; } }

@@ -8,14 +8,19 @@ function Main() {
           <img src='https://i.ibb.co/GR9QpsK/profile.png' alt='프로필 사진'></img>
         </div>
         <div className='profile_name'>
-          <h2>taedonn.</h2>
+          <h2>taedonn</h2>
           <h3>이태호</h3>
+        </div>
+        <div className='profile_link'>
+          <h2>사이트 바로가기</h2>
+          <h3><a href='https://github.com/taedonn' target='_blank' rel='noreferrer'>⭐ 깃허브</a></h3>
+          <h3><a href='https://github.com/taedonn' target='_blank' rel='noreferrer'>👋 블로그</a></h3>
+          <h3><a href='https://github.com/taedonn' target='_blank' rel='noreferrer'>👋 이력서</a></h3>
+          <h3><a href='https://github.com/taedonn' target='_blank' rel='noreferrer'>👨‍💻 포트폴리오</a></h3>
         </div>
       </div>
       <div className='index_right'>
-        <div className='title'>
-          PROFILE
-        </div>
+        <div className='title'>PROFILE</div>
         <h2>
           <span>#프론트엔드</span>
           <span>#개발자</span>

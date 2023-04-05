@@ -27,6 +27,7 @@
     height: 160px;
     border-radius: 50%;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 .index_left img {
     width: 100%;
@@ -41,7 +42,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 20px;
+    margin-bottom: 52px;
 }
 .index_left .profile_name h2 {
     font-size: 20px;
@@ -50,9 +51,30 @@
     margin-bottom: 6px;
 }
 .index_left .profile_name h3 {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
     color: #97989C;
+}
+.index_left .profile_link {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.index_left .profile_link h2 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #35363A;
+    margin-bottom: 16px;
+}
+.index_left .profile_link h3 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.index_left .profile_link h3 a {
+    color: #646568;
 }
 
 /* 오른쪽 */
