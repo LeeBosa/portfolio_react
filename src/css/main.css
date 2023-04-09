@@ -149,6 +149,29 @@ body {
     width: 12px;
 }
 
+/* 해시태그 스타일 */
+.index_left .hashtag {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6px;
+}
+.index_left .hashtag span {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1;
+    padding-bottom: 2px;
+    border-bottom: 1px solid;
+    margin-right: 6px;
+    margin-top: 6px;
+    transition: 0.2s;
+}
+.index_left .hashtag span:last-of-type {
+    margin-right: 0;
+}
+
 /* 오른쪽 */
 .index_right {
     width: calc(100% - 280px);
@@ -181,25 +204,6 @@ body {
     transition: 0.2s;
 }
 
-/* 해시태그 스타일 */
-.index_right .hashtag {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 14px;
-}
-.index_right .hashtag span {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1;
-    padding-bottom: 2px;
-    border-bottom: 1px solid;
-    margin-right: 12px;
-    margin-top: 6px;
-    transition: 0.2s;
-}
-
 /* 소제목 스타일 */
 .index_right .sub_title {
     width: 100%;
@@ -213,7 +217,10 @@ body {
 .index_right .sub_title_school {
     margin-top: 20px;
 }
-.index_right .sub_title_skills_1 {
+.index_right .sub_title_skill_1 {
+    margin-top: 20px;
+}
+.index_right .sub_title_skill_2 {
     margin-top: 20px;
 }
 .index_right .sub_title div {
@@ -232,7 +239,7 @@ body {
 .index_right .sub_title_school svg {
     width: 32px;
 }
-.index_right .sub_title_skills_2 svg {
+.index_right .sub_title_skill_2 svg {
     width: 26px;
 }
 .index_right .sub_title p {
@@ -255,6 +262,12 @@ body {
     padding-left: 32px;
 }
 .index_right .list_school {
+    margin-bottom: 80px;
+}
+.index_right .list_skill_1 {
+    margin-bottom: 32px;
+}
+.index_right .list_skill_2 {
     margin-bottom: 80px;
 }
 .index_right .list > li {
@@ -290,32 +303,6 @@ body {
     transition: 0.2s;
 }
 
-.index_right .skills {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-bottom: 20px;
-}
-.index_right .skills_2 {
-    margin-bottom: 80px;
-}
-.index_right .skills span {
-    height: 32px;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.4px;
-    padding: 0 16px;
-    padding-bottom: 1px;
-    margin-right: 8px;
-    margin-top: 12px;
-    transition: 0.2s;
-}
 .index_right .company {
     width: 100%;
     margin-top: 20px;
@@ -356,6 +343,10 @@ body.night_mode {
 .night_mode .index_left .profile_name h3 {
     color: #B1B2B6;
 }
+.night_mode .index_left .hashtag span {
+    border-color: #B1B2B6;
+    color: #B1B2B6;
+}
 .night_mode .index_left .profile_link h2, .night_mode .index_left .profile_info h2 {
     color: #E9EAEE;
 }
@@ -375,10 +366,6 @@ body.night_mode {
 .night_mode .index_right .title::before {
     border-top: 6px solid #E9EAEE;
     border-left: 6px solid #E9EAEE;
-}
-.night_mode .index_right .hashtag span {
-    border-color: #CDCED2;
-    color: #CDCED2;
 }
 .night_mode .index_right .sub_title  {
     border-color: #35363A;
@@ -403,10 +390,6 @@ body.night_mode {
 }
 .night_mode .index_right .sub_list > li p {
     color: #E9EAEE;
-}
-.night_mode .index_right .skills span {
-    background-color: #35363A;
-    color: #CDCED2;
 }
 .night_mode .index_right .copyright {
     color: #B1B2B6;
@@ -435,6 +418,10 @@ body.bright_mode {
 .bright_mode .index_left .profile_name h3 {
     color: #97989C;
 }
+.bright_mode .index_left .hashtag span {
+    border-color: #97989C;
+    color: #97989C;
+}
 .bright_mode .index_left .profile_link h2, .bright_mode .index_left .profile_info h2 {
     color: #35363A;
 }
@@ -454,10 +441,6 @@ body.bright_mode {
 .bright_mode .index_right .title::before {
     border-top: 6px solid #35363A;
     border-left: 6px solid #35363A;
-}
-.bright_mode .index_right .hashtag span {
-    border-color: #646568;
-    color: #646568;
 }
 .bright_mode .index_right .sub_title  {
     border-color: #35363A;
@@ -482,10 +465,6 @@ body.bright_mode {
 }
 .bright_mode .index_right .sub_list > li p {
     color: #35363A;
-}
-.bright_mode .index_right .skills span {
-    background-color: #E9EAEE;
-    color: #646568;
 }
 .bright_mode .index_right .copyright {
     color: #646568;
@@ -591,9 +570,9 @@ body.bright_mode {
 
     /* 소제목 스타일 */
     .index_right .sub_title_school {
-        margin-top: 12px;
+        margin-top: 16px;
     }
-    .index_right .sub_title_skills_1 {
+    .index_right .sub_title_skill_1 {
         margin-top: 16px;
     }
     .index_right .sub_title div {
@@ -606,7 +585,10 @@ body.bright_mode {
     .index_right .sub_title_school svg {
         width: 26px;
     }
-    .index_right .sub_title_skills_2 svg {
+    .index_right .sub_title_skill_2 {
+        margin-top: 16px;
+    }
+    .index_right .sub_title_skill_2 svg {
         width: 22px;
     }
     .index_right .sub_title p {
@@ -618,10 +600,10 @@ body.bright_mode {
     }
 
     /* 해시태그 스타일 */
-    .index_right .hashtag {
+    .index_left .hashtag {
         margin-top: 6px;
     }
-    .index_right .hashtag span {
+    .index_left .hashtag span {
         font-size: 12px;
         font-weight: 400;
     }
@@ -632,6 +614,12 @@ body.bright_mode {
         padding-left: 28px;
     }
     .index_right .list_school {
+        margin-bottom: 52px;
+    }
+    .index_right .list_skill_1 {
+        margin-bottom: 16px;
+    }
+    .index_right .list_skill_2 {
         margin-bottom: 52px;
     }
     .index_right .list > li {
@@ -648,21 +636,6 @@ body.bright_mode {
         margin-left: 8px;
     }
 
-    .index_right .skills {
-        margin-bottom: 16px;
-    }
-    .index_right .skills_2 {
-        margin-bottom: 52px;
-    }
-    .index_right .skills span {
-        height: 28px;
-        border-radius: 14px;
-        font-size: 10px;
-        padding: 0 14px;
-        padding-bottom: 1px;
-        margin-right: 6px;
-        margin-top: 8px;
-    }
     .index_right .company {
         margin-top: 14px;
     }
@@ -670,6 +643,7 @@ body.bright_mode {
     /* 저작권 */
     .index_right .copyright {
         font-size: 12px;
+        margin-top: 52px;
     }
 }
 @media screen and ( max-width: 640px ) {

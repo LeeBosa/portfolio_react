@@ -21,6 +21,12 @@ function Main() {
         <div className='profile_name'>
           <h2>taedonn.</h2>
           <h3>이태호</h3>
+          <div className='hashtag'>
+          <span>#프론트엔드</span>
+          <span>#개발자</span>
+          <span>#서울</span>
+          <span>#토론토</span>
+        </div>
         </div>
         <div className='profile_link'>
           <h2>사이트 바로가기</h2>
@@ -50,14 +56,6 @@ function Main() {
       </div>
       <div className='index_right'>
         <div className='title'>PROFILE</div>
-        <div className='hashtag'>
-          <span>#프론트엔드</span>
-          <span>#개발자</span>
-          <span>#ISTJ</span>
-          <span>#서울</span>
-          <span>#토론토</span>
-          <span>#OCADU</span>
-        </div>
         <div className='sub_title sub_title_school'>
           <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/><path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/></svg></div>
           <p>OCAD University<span>2013.09 ~ 2019.09</span></p>
@@ -72,39 +70,40 @@ function Main() {
           </li>
         </ul>
         <div className='title'>SKILLS</div>
-        <div className='sub_title sub_title_skills_1'>
+        <div className='sub_title sub_title_skill_1'>
           <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/></svg></div>
           <p>프론트엔드 개발<span>2021.04 ~</span></p>
         </div>
-        <div className='skills skills_1'>
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>SASS</span>
-          <span>JavaScript</span>
-          <span>TypeScript</span>
-          <span>jQuery</span>
-          <span>GSAP</span>
-          <span>Three.js</span>
-          <span>Node.js</span>
-          <span>React</span>
-          <span>Vue</span>
-          <span>AJAX</span>
-          <span>JSON</span>
-          <span>Git</span>
-          <span>GitHub</span>
-        </div>
-        <div className='sub_title sub_title_skills_2'>
+        <ul className='list list_skills_1'>
+          <li>사용하는 언어
+            <ul className='sub_list'>
+              <li><p>마크업 언어</p>HTML / Markdown</li>
+              <li><p>스타일 시트</p>CSS / SASS / SCSS</li>
+              <li><p>스크립트 언어</p>JavaScript / TypeScript / jQuery</li>
+              <li><p>자바스크립트 라이브러리</p>THREE / GSAP</li>
+              <li><p>자바스크립트 프레임워크</p>React / Vue</li>
+              <li><p>자바스크립트 런타임</p>Node.js</li>
+            </ul>
+          </li>
+          <li>네트워킹 시스템
+            <ul className='sub_list'>
+              <li><p>버전 관리 프로그램</p>Git / SourceTree</li>
+              <li><p>커뮤니티</p>GitHub / Tistory</li>
+            </ul>
+          </li>
+        </ul>
+        <div className='sub_title sub_title_skill_2'>
           <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M12.433 10.07C14.133 10.585 16 11.15 16 8a8 8 0 1 0-8 8c1.996 0 1.826-1.504 1.649-3.08-.124-1.101-.252-2.237.351-2.92.465-.527 1.42-.237 2.433.07zM8 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
           <p>제품 디자인<span>2013.09 ~</span></p>
         </div>
-        <div className='skills skills_2'>
-          <span>PhotoShop</span>
-          <span>Illustrator</span>
-          <span>Figma</span>
-          <span>Rhinoceros</span>
-          <span>SolidWorks</span>
-          <span>KeyShot</span>
-        </div>
+        <ul className='list list_skill_2'>
+          <li>사용하는 프로그램
+            <ul className='sub_list'>
+              <li><p>그래픽 디자인 프로그램</p>PhotoShop / Illustrator / Figma</li>
+              <li><p>3D 디자인 프로그램</p>Rhinoceros / SolidWorks / KeyShot</li>
+            </ul>
+          </li>
+        </ul>
         <div className='title'>EXPERIENCE</div>
         <div className='company'>
           <div className='sub_title sub_title_company'>
