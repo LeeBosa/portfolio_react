@@ -72,10 +72,10 @@ function Main() {
         <div className='title'>SKILLS</div>
         <div className='sub_title sub_title_skill_1'>
           <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/></svg></div>
-          <p>프론트엔드 개발<span>2021.04 ~</span></p>
+          <p>웹 개발<span>2021.04 ~</span></p>
         </div>
         <ul className='list list_skills_1'>
-          <li>사용하는 언어
+          <li>프론트엔드 개발
             <ul className='sub_list'>
               <li><p>마크업 언어</p>HTML / Markdown</li>
               <li><p>스타일 시트</p>CSS / SASS / SCSS</li>
@@ -83,6 +83,7 @@ function Main() {
               <li><p>자바스크립트 라이브러리</p>THREE / GSAP</li>
               <li><p>자바스크립트 프레임워크</p>React / Vue</li>
               <li><p>자바스크립트 런타임</p>Node.js</li>
+              <li><p>객체 데이터</p>AJAX / JSON</li>
             </ul>
           </li>
           <li>네트워킹 시스템
