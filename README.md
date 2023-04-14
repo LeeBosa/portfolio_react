@@ -10,4 +10,4 @@ Tae Lee | GitHub @ taedonn | FE & ID
 
 #프론트엔드 #개발자 #ISTJ #서울 #토론토 #OCADU
 
-![title_image](https://i.ibb.co/GR9QpsK/profile.png)
+![title_image](https://i.ibb.co/gyqVvQ4/profile-480p.png)
