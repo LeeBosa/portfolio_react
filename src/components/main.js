@@ -83,12 +83,12 @@ function Main() {
               <li><p>자바스크립트 라이브러리</p>THREE / GSAP</li>
               <li><p>자바스크립트 프레임워크</p>React / Vue</li>
               <li><p>자바스크립트 런타임</p>Node.js</li>
-              <li><p>객체 데이터</p>AJAX / JSON</li>
+              <li><p>데이터 파싱</p>AJAX / JSON</li>
             </ul>
           </li>
-          <li>네트워킹 시스템
+          <li>개발 네트워크
             <ul className='sub_list'>
-              <li><p>버전 관리 프로그램</p>Git / SourceTree</li>
+              <li><p>버전 관리 시스템</p>Git / SourceTree</li>
               <li><p>커뮤니티</p>GitHub / Tistory</li>
             </ul>
           </li>
@@ -98,7 +98,7 @@ function Main() {
           <p>제품 디자인<span>2013.09 ~</span></p>
         </div>
         <ul className='list list_skill_2'>
-          <li>사용하는 프로그램
+          <li>디자인 프로그램
             <ul className='sub_list'>
               <li><p>그래픽 디자인 프로그램</p>PhotoShop / Illustrator / Figma</li>
               <li><p>3D 디자인 프로그램</p>Rhinoceros / SolidWorks / KeyShot</li>
