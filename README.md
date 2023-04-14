@@ -6,7 +6,7 @@ Live Demo : [https://resume.taedonn.com](https://resume.taedonn.com)
 
 &nbsp;
 
-Tae Lee | GitHub @ taedonn | FE & ID
+Tae Ho Lee | GitHub @taedonn
 
 Front-End Developer
 
