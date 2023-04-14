@@ -8,6 +8,6 @@ Live Demo : [https://resume.taedonn.com](https://resume.taedonn.com)
 
 Tae Lee | GitHub @ taedonn | FE & ID
 
-#프론트엔드 #개발자 #ISTJ #서울 #토론토 #OCADU
+Front-End Developer
 
 ![title_image](https://i.ibb.co/gyqVvQ4/profile-480p.png)
