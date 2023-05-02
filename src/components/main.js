@@ -16,7 +16,7 @@ function Main() {
       </div>
       <div className='index_left'>
         <div className='img_wrap'>
-          <img src='https://i.ibb.co/GR9QpsK/profile.png' alt='프로필 사진'></img>
+          <img src='https://i.ibb.co/gyqVvQ4/profile-480p.png' alt='프로필 사진'></img>
         </div>
         <div className='profile_name'>
           <h2>taedonn.</h2>
