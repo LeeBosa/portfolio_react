@@ -32,7 +32,7 @@ function Main() {
           <h2>사이트 바로가기</h2>
           <h3><a href='https://github.com/taedonn' target='_blank' rel='noreferrer'>⭐ 깃허브</a></h3>
           <h3><a href='https://taedonn.tistory.com' target='_blank' rel='noreferrer'>👋 블로그</a></h3>
-          <h3><a href='https://portfolio.taedonn.com' target='_blank' rel='noreferrer'>👨‍💻 포트폴리오</a></h3>
+          <h3><a href='https://taedonn.com' target='_blank' rel='noreferrer'>👨‍💻 포트폴리오</a></h3>
         </div>
         <div className='profile_info'>
           <h2>연락처 정보</h2>
@@ -50,7 +50,7 @@ function Main() {
           </h3>
           <h3>
             <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/></svg></span>
-            taedonn@outlook.com
+            taedonn@taedonn.com
           </h3>
         </div>
       </div>
