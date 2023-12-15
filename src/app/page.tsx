@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Body } from '@/modules/nodes'
 import Side from '@/app/side'
 
 const nexume = require('../../nexume.config')
@@ -11,6 +10,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <Side/>
+    <main className='w-full flex'>
+      <Side/>
+    </main>
   )
 }
