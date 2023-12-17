@@ -13,9 +13,9 @@ const nexumeConfig = {
     /**
      * Side menu
      * 
-     * show: boolean
+     * show_sidemenu: boolean
      */
-    show: true,
+    show_sidemenu: true,
 }
 
 module.exports = nexumeConfig

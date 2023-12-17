@@ -6,7 +6,7 @@ export default function Side({
   nexume: NexumeConfig
 }) {
   return (
-    <div className={`${nexume.show ? 'block' : 'hidden'} w-10 min-h-[100vh]`}>
+    <div className='w-10 h-[100vh] bg-l-200'>
 
     </div>
   )

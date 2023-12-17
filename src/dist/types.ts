@@ -1,5 +1,5 @@
 export type NexumeConfig = {
     title: string,
     description: string,
-    show: boolean,
+    show_sidemenu: boolean,
 }
