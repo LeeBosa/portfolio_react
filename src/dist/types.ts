@@ -1,4 +1,5 @@
 export type NexumeConfig = {
     title: string,
     description: string,
+    show: boolean,
 }
