@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className='w-full flex'>
+    <main className='w-full flex text-l-500'>
       <Side nexume={nexume}/>
       <Main nexume={nexume}/>
     </main>

@@ -3,9 +3,7 @@ import type { Config } from 'tailwindcss'
 const config: Config = {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/*.{js,ts,jsx,tsx,mdx}',
     './src/modules/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/modules/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -16,14 +14,14 @@ const config: Config = {
         },
         l: {
           100: '#FFFFFF',
-          200: '#EFE5E5',
-          300: '#DED4D4',
-          400: '#B9B0B0',
-          500: '#999090',
-          600: '#716868',
-          700: '#5D5555',
-          800: '#3E3636',
-          900: '#1D1717',
+          200: '#E9ECEF',
+          300: '#DEE2E6',
+          400: '#CED4DA',
+          500: '#ADB5BD',
+          600: '#6C757D',
+          700: '#495057',
+          800: '#343A40',
+          900: '#212529',
         }
       },
     },

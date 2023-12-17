@@ -11,11 +11,20 @@ const nexumeConfig = {
     icon: '/favicon.ico',
 
     /**
-     * Side menu
+     * Sidebar
      * 
-     * show_sidemenu: boolean
+     * showSidebar: boolean
      */
-    show_sidemenu: true,
+    showSidebar: true,
+
+    /**
+     * Profile image
+     * 
+     * profileImg: string
+     * profileImgSize: number *Compatible with tailwindCSS rem properties. Check out https://tailwindcss.com/docs/width for details.
+     */
+    profileImg: '/profile_img.jpg',
+    profileImgSize: 48,
 }
 
 module.exports = nexumeConfig

@@ -1,5 +1,7 @@
 export type NexumeConfig = {
     title: string,
     description: string,
-    show_sidemenu: boolean,
+    showSidebar: boolean,
+    profileImg: string,
+    profileImgSize: number,
 }

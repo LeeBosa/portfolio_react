@@ -6,7 +6,7 @@ export default function Main({
   nexume: NexumeConfig
 }) {
   return (
-    <div>
+    <div className="w-full min-h-screen">
         
     </div>
   )
