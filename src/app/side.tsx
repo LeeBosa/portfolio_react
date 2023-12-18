@@ -6,10 +6,21 @@ export default function Side({
 }: {
   nexume: NexumeConfig
 }) {
+  const {
+    showSidebar,
+    sidebarWidth,
+    sidebarPadding,
+    sidebarBorder,
+    sidebarColor,
+  } = nexume;
+
   return (
-    <div className={`${nexume.showSidebar ? 'block' : 'hidden'} w-72 min-h-screen px-6 py-12 flex justify-center items-start shrink-0 bg-l-200`}>
-        <Node.Img/>
+    <div 
+      style={sidebarBorder ? {borderColor: sidebarColor} : {backgroundColor: sidebarColor}}
+      className={`${showSidebar ? 'flex' : 'hidden'} ${sidebarBorder && 'border-r'} w-${sidebarWidth} min-h-screen px-${sidebarPadding[0]} py-${sidebarPadding[1]} flex-col justify-start items-center shrink-0`}
+    >
+      <Node.ProfileImg/>
+      <Node.ProfileName>Jane Doe</Node.ProfileName>
     </div>
   )
 }
-  
