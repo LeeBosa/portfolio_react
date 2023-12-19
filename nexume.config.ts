@@ -11,25 +11,32 @@ const nexumeConfig = {
 	icon: '/favicon.ico',
 
 	/**
-	 * Sidebar
+	 * Body
 	 * 
-	 * showSidebar:    boolean
-	 * sidebarWidth:   number *Compatible only with tailwindCSS rem properties. Check out https://tailwindcss.com/docs/width for details.
-	 * sidebarPadding: number[x, y] *Compatible only with tailwindCSS rem properties.
-	 * sidebarBorder:  boolean *If true, sidebarColor will be applied as border color. If not, it will be applied as background color.
-	 * sidebarColor:   string *If you don't want to apply color on sidebar, set it as 'transparent'.
+	 * bodyBgColor: string
 	 */
-	showSidebar: true,
-	sidebarWidth: 72,
-	sidebarPadding: [6, 12],
-	sidebarBorder: true,
-	sidebarColor: '#CED4DA',
+	bodyBgColor: '#000000',
 
 	/**
-	 * Sidebar profile image
+	 * Side
+	 * 
+	 * showSide:    boolean
+	 * sideWidth:   number *Compatible only with tailwindCSS rem properties. Check out https://tailwindcss.com/docs/width for details.
+	 * sidePadding: number[x, y] *Compatible only with tailwindCSS rem properties.
+	 * sideBorder:  boolean *If true, sidebarColor will be applied as border color. If not, it will be applied as background color.
+	 * sideColor:   string *If you don't want to apply color on sidebar, set it as 'transparent'.
+	 */
+	showSide: true,
+	sideWidth: 72,
+	sidePadding: [6, 12],
+	sideBorder: true,
+	sideColor: '#CED4DA',
+
+	/**
+	 * Side profile image
 	 * 
 	 * showProfileImg: 	 boolean
-	 * profileImgUrl:	 	 string
+	 * profileImgUrl:	 string
 	 * profileImgSize:	 number *Compatible only with tailwindCSS rem properties.
 	 * profileImgRadius: string none|sm|md|lg|full *Compatible only with tailwindCSS rounded properties.
 	 */
@@ -40,8 +47,8 @@ const nexumeConfig = {
 	/**
 	 * Sidebar profile name
 	 * 
-	 * profileNameWidth: 		number *Compatible only with tailwindCSS rem properties.
-	 * profileNameColor: 		string
+	 * profileNameWidth: 	number *Compatible only with tailwindCSS rem properties.
+	 * profileNameColor: 	string
 	 * profileNameFontSize: string *Compatible only with tailwindCSS font size properties. Check out https://tailwindcss.com/docs/font-size for details.
 	 */
 	profileNameWidth: 48,

@@ -1,7 +1,9 @@
+import { Noto_Sans_KR } from "next/font/google";
 import Image from "next/image"
 
-const nexume = require('../../nexume.config')
+const notoSansKR = Noto_Sans_KR({ subsets: ['latin'] })
 
+const nexume = require('../../nexume.config')
 const {
 	profileImgSize,
 	profileImgUrl,
@@ -10,6 +12,20 @@ const {
   profileNameColor,
   profileNameFontSize,
 } = nexume;
+
+export function Body({
+  children
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <body
+      className={notoSansKR.className + 'w-full flex'}
+    >
+      {children}
+    </body>
+  )
+}
 
 export function Main() {
   return (

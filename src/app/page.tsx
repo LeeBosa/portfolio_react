@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import {
+  Body,
   Main,
   Side,
   Img,
@@ -17,11 +18,11 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className='w-full flex text-l-500'>
+    <Body>
       <Side>
         <Img/>
       </Side>
       <Main/>
-    </main>
+    </Body>
   )
 }
