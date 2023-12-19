@@ -42,11 +42,12 @@ const nexumeConfig = {
 	 * 
 	 * profileNameWidth: 		number *Compatible only with tailwindCSS rem properties.
 	 * profileNameColor: 		string
-	 * profileNameFontSize: string * Compatible only with tailwindCSS font size properties. Check out https://tailwindcss.com/docs/font-size for details.
+	 * profileNameFontSize: string *Compatible only with tailwindCSS font size properties. Check out https://tailwindcss.com/docs/font-size for details.
 	 */
 	profileNameWidth: 48,
 	profileNameColor: '#212529',
 	profileNameFontSize: 'xl',
+	profileNameFontWeight: ''
 }
 
 module.exports = nexumeConfig

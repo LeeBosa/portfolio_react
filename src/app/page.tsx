@@ -1,22 +1,27 @@
 import type { Metadata } from 'next'
-import Main from '@/app/main'
-import Side from '@/app/side'
+import {
+  Main,
+  Side,
+  Img,
+} from '@/modules/nodes'
 
-const nexume = require('../../nexume.config')
+const { title, description, icon } = require('../../nexume.config')
 
 export const metadata: Metadata = {
-  title: nexume.title,
-  description: nexume.description,
+  title: title,
+  description: description,
   icons: {
-    icon: nexume.icon,
+    icon: icon,
   }
 }
 
 export default function Home() {
   return (
     <main className='w-full flex text-l-500'>
-      <Side nexume={nexume}/>
-      <Main nexume={nexume}/>
+      <Side>
+        <Img/>
+      </Side>
+      <Main/>
     </main>
   )
 }
