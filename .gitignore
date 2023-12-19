@@ -14,7 +14,7 @@
 
 # production
 /build
-/out/_next
+/docs/_next
 
 # misc
 .DS_Store
