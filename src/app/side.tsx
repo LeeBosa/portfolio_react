@@ -15,7 +15,7 @@ export default function Side({
   } = nexume;
 
   return (
-    <div 
+    <div
       style={sidebarBorder ? {borderColor: sidebarColor} : {backgroundColor: sidebarColor}}
       className={`${showSidebar ? 'flex' : 'hidden'} ${sidebarBorder && 'border-r'} w-${sidebarWidth} min-h-screen px-${sidebarPadding[0]} py-${sidebarPadding[1]} flex-col justify-start items-center shrink-0`}
     >

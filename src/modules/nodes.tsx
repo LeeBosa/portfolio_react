@@ -6,6 +6,9 @@ const {
 	profileImgSize,
 	profileImgUrl,
 	profileImgRadius,
+  profileNameWidth,
+  profileNameColor,
+  profileNameFontSize,
 } = nexume;
 
 export function ProfileImg() {
@@ -22,7 +25,10 @@ export function ProfileName({
 	children: React.ReactNode,
 }) {
 	return (
-		<div className="">
+		<div
+      style={{color: profileNameColor}}
+      className={`w-${profileNameWidth} text-${profileNameFontSize}`}
+    >
 			{children}
 		</div>
 	)

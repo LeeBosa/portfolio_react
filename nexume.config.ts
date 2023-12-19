@@ -14,7 +14,7 @@ const nexumeConfig = {
 	 * Sidebar
 	 * 
 	 * showSidebar:    boolean
-	 * sidebarWidth:	 number *Compatible only with tailwindCSS rem properties. Check out https://tailwindcss.com/docs/width for details.
+	 * sidebarWidth:   number *Compatible only with tailwindCSS rem properties. Check out https://tailwindcss.com/docs/width for details.
 	 * sidebarPadding: number[x, y] *Compatible only with tailwindCSS rem properties.
 	 * sidebarBorder:  boolean *If true, sidebarColor will be applied as border color. If not, it will be applied as background color.
 	 * sidebarColor:   string *If you don't want to apply color on sidebar, set it as 'transparent'.
@@ -29,7 +29,7 @@ const nexumeConfig = {
 	 * Sidebar profile image
 	 * 
 	 * showProfileImg: 	 boolean
-	 * profileImgUrl:		 string
+	 * profileImgUrl:	 	 string
 	 * profileImgSize:	 number *Compatible only with tailwindCSS rem properties.
 	 * profileImgRadius: string none|sm|md|lg|full *Compatible only with tailwindCSS rounded properties.
 	 */
@@ -40,8 +40,13 @@ const nexumeConfig = {
 	/**
 	 * Sidebar profile name
 	 * 
-	 * 
+	 * profileNameWidth: 		number *Compatible only with tailwindCSS rem properties.
+	 * profileNameColor: 		string
+	 * profileNameFontSize: string * Compatible only with tailwindCSS font size properties. Check out https://tailwindcss.com/docs/font-size for details.
 	 */
+	profileNameWidth: 48,
+	profileNameColor: '#212529',
+	profileNameFontSize: 'xl',
 }
 
 module.exports = nexumeConfig

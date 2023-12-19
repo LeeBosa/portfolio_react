@@ -14,4 +14,9 @@ export type NexumeConfig = {
 	profileImgUrl: string,
 	profileImgSize: number,
 	profileImgRadius: string,
+
+	// Sidebar profile name
+	profileNameWidth: number,
+	profileNameColor: string,
+	profileNameFontSize: string,
 }
