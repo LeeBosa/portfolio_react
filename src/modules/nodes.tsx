@@ -1,74 +1,84 @@
-import { Noto_Sans_KR } from "next/font/google";
-import Image from "next/image"
-
-const notoSansKR = Noto_Sans_KR({ subsets: ['latin'] })
+import Image from "next/image";
 
 const nexume = require('../../nexume.config')
 const {
-	profileImgSize,
-	profileImgUrl,
-	profileImgRadius,
-  profileNameWidth,
-  profileNameColor,
-  profileNameFontSize,
+	width
 } = nexume;
 
-export function Body({
+/**
+ * Main
+ */
+export function Main({
   children
 }: {
   children: React.ReactNode
 }) {
   return (
-    <body
-      className={notoSansKR.className + 'w-full flex'}
-    >
-      {children}
-    </body>
+    <main className='w-full flex justify-center'>
+      <div style={{maxWidth: width}} className="w-full flex flex-col">
+        {children}
+      </div>
+    </main>
   )
 }
 
-export function Main() {
+/**
+ * Profile
+ */
+export function Profile({
+  children
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <div className="w-full min-h-screen">
-        
+    <div>
+      {children}
     </div>
   )
 }
 
-export function Side({
-  children,
-}: {
-  children: React.ReactNode,
-}) {
+/**
+ * Image
+ * 
+ * src: string
+ * width: number
+ * rounded: string *none|sm|md|lg|full
+ */
+const defaultImg = {
+  width: 200,
+  rounded: "lg",
+}
+
+interface Img {
+  src: string,
+  width?: number,
+  rounded?: string,
+}
+
+export function Img({
+  src,
+  width=defaultImg.width,
+  rounded=defaultImg.rounded,
+}: Img) {
   return (
     <div
-      // style={sidebarBorder ? {borderColor: sidebarColor} : {backgroundColor: sidebarColor}}
-      // className={`${showSidebar ? 'flex' : 'hidden'} ${sidebarBorder && 'border-r'} w-${sidebarWidth} min-h-screen px-${sidebarPadding[0]} py-${sidebarPadding[1]} flex-col justify-start items-center shrink-0`}
+      style={{
+        width: width,
+        height: width,
+      }}
+      className={`relative overflow-hidden ${
+        rounded ===  "sm" 
+          ? "rounded-sm" 
+          : rounded === "md"
+            ? "rounded-md"
+              : rounded === "lg"
+                ? "rounded-lg"
+                  : rounded === "full"
+                    ? "rounded-full"
+                    : ""
+      }`}
     >
-      {children}
+      <Image src={src} alt="Profile image" fill priority={true} sizes="100%" className="object-cover"/>
     </div>
   )
-}
-
-export function Img() {
-	return (
-		<div className={`w-${profileImgSize} h-${profileImgSize} rounded-${profileImgRadius} relative overflow-hidden`}>
-			<Image src={profileImgUrl} fill sizes="100%" priority={true} alt="Sidebar profile image" className="object-cover"/>
-		</div>
-	)
-}
-
-export function Name({
-	children
-}: {
-	children: React.ReactNode,
-}) {
-	return (
-		<div
-      style={{color: profileNameColor}}
-      className={`w-${profileNameWidth} text-${profileNameFontSize}`}
-    >
-			{children}
-		</div>
-	)
 }
