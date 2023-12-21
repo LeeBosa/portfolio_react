@@ -6,16 +6,18 @@ const nexumeConfig = {
 	 * description: string
 	 * icon:        string,
 	 */
-	title: "Jane Doe",
-	description: "Jane Doe's resume",
-	icon: '/favicon.ico',
+	title: "Taedonn's resume",
+	description: "Taedonn's resume using next.js",
+	icon: 'undefined',
 
 	/**
 	 * Layout
 	 * 
-	 * width: number
+	 * width: 	   number
+	 * themeColor: string
 	 */
-	width: 794
+	width: 794,
+	themeColor: '#A78BFA',
 }
 
 module.exports = nexumeConfig

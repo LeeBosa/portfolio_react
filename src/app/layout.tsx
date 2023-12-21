@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Noto_Sans_KR } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import '@/css/tailwind.css'
 
 const { title, description, icon } = require('../../nexume.config')
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   }
 }
 
-const notoSansKR = Noto_Sans_KR({ subsets: ['latin'] })
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 export default function RootLayout({
   children,
@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${notoSansKR.className}`}>
+      <body className={`${montserrat.className}`}>
         {children}
       </body>
     </html>

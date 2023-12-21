@@ -8,29 +8,33 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        m: {
+        h: {
           transparent: 'transparent',
-          green: '#00DC82',
         },
         l: {
           100: '#FFFFFF',
-          200: '#E9ECEF',
-          300: '#DEE2E6',
-          400: '#CED4DA',
-          500: '#ADB5BD',
-          600: '#6C757D',
-          700: '#495057',
-          800: '#343A40',
-          900: '#212529',
+          200: '#FAFAFA',
+          300: '#E0E0E0',
+          400: '#ABABAB',
+          500: '#5C5C5C',
+          600: '#222222'
+        },
+        d: {
+          100: '#FFFFFF',
+          200: '#DADADA',
+          300: '#B3B3B3',
+          400: '#666666',
+          500: '#363636',
+          600: '#242424'
         }
       },
     },
   },
   plugins: [],
   safelist: [
-      { pattern: /(w|h|px|py)-(0.5|1|1.5|2|2.5|3|3.5|4|5|6|7|8|9|10|11|12|14|16|20|24|28|32|36|40|44|48|52|56|60|64|72|80|96|)/ },
-      { pattern: /(rounded)-(none|sm|md|lg|full)/ },
-      { pattern: /(text)-(xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl8xl|9xl)/ },
+      { pattern: /(pt|pb|mt|ml)-(0.5|1|1.5|2|2.5|3|3.5|4|5|6|7|8|9|10|11|12|14|16|20|24|28|32|36|40|44|48|52|56|60|64|72|80|96|)/ },
+      { pattern: /(text)-(xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)/ },
+      { pattern: /(font)-(thin|extralight|light|normal|medium|semibold|bold|extrabold|black)/ },
   ]
 }
 export default config
