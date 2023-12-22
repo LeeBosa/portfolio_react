@@ -126,6 +126,61 @@ export function ProfileInfo({
 }
 
 /**
+ * Info
+ * 
+ * marginTop: number *Compatible only with margin properties of tailwind CSS. Check out https://tailwindcss.com/docs/margin for details.
+ * icon: string web|github|linkedin|facebook|instagram|address|phone
+ * iconColor: string
+ */
+const defaultInfo = {
+  marginTop: 0,
+  icon: '',
+  iconColor: '',
+}
+
+interface Info {
+  children: React.ReactNode,
+  marginTop?: number,
+  icon?: string,
+  iconColor?: string,
+}
+
+export function Info({
+  children,
+  marginTop=defaultInfo.marginTop,
+  icon=defaultInfo.icon,
+  iconColor=defaultInfo.iconColor,
+}: Info) {
+  return (
+    <div className={`mt-${marginTop} relative flex items-center gap-2 text-base text-l-500`}>
+      {
+        icon !== '' && 
+          <div style={iconColor !== '' ? {} : {color: iconColor}} className="text-l-600">
+            {
+              icon === 'web'
+              ? <i className="fa-solid fa-earth-asia"></i>
+              : icon === 'github'
+                ? <i className="fa-brands fa-github"></i>
+                : icon === 'linkedin'
+                  ? <i className="fa-brands fa-linkedin-in"></i>
+                  : icon === 'facebook'
+                    ? <i className="fa-brands fa-square-facebook"></i>
+                    : icon === 'instagram'
+                      ? <i className="fa-brands fa-instagram"></i>
+                      : icon === 'address'
+                        ? <i className="fa-regular fa-compass"></i>
+                        : icon === 'phone'
+                          ? <i className="fa-solid fa-mobile-screen-button"></i>
+                          : <></>
+            }
+          </div>
+      }
+      <div>{children}</div>
+    </div>
+  )
+}
+
+/**
  * Heading 1
  * 
  * fontSize:   string *Compatible only with font-size properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-size for details.
@@ -148,7 +203,7 @@ export function H1({
   fontWeight=defaultH1.fontWeight,
 }: H1) {
   return (
-    <h1 className={`text-${fontSize} font-${fontWeight} text-l-600`}>
+    <h1 className={`text-${fontSize} font-${fontWeight} text-l-700`}>
       {children}
     </h1>
   )
@@ -181,7 +236,7 @@ export function P1({
   marginTop=defaultP1.marginTop,
 }: P1) {
   return (
-    <p className={`text-${fontSize} font-${fontWeight} mt-${marginTop} text-l-500`}>
+    <p className={`text-${fontSize} font-${fontWeight} mt-${marginTop} text-l-600`}>
       {children}
     </p>
   )
