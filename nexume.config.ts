@@ -17,7 +17,7 @@ const nexumeConfig = {
 	 * themeColor: string
 	 */
 	width: 794,
-	themeColor: '#A78BFA',
+	themeColor: '#8A5CF5',
 }
 
 module.exports = nexumeConfig
