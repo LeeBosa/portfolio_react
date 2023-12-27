@@ -282,6 +282,42 @@ export function H1({
 }
 
 /**
+ * Heading 2
+ * 
+ * fontSize:   string *Compatible only with font-size properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-size for details.
+ * fontWeight: string *Compatible only with font-weight properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-weight for details.
+ * margin:     number *Compatible only with margin properties of tailwind CSS. Check out https://tailwindcss.com/docs/margin for details.
+ */
+const defaultH2 = {
+  fontSize: '2xl',
+  fontWeight: 'semibold',
+  marginTop: 0,
+  marginBottom: 0,
+}
+
+interface H2 {
+  children: React.ReactNode,
+  fontSize?: string,
+  fontWeight?: string,
+  marginTop?: number,
+  marginBottom?: number,
+}
+
+export function H2({
+  children,
+  fontSize=defaultH2.fontSize,
+  fontWeight=defaultH2.fontWeight,
+  marginTop=defaultH2.marginTop,
+  marginBottom=defaultH2.marginBottom,
+}: H2) {
+  return (
+    <h2 className={`text-${fontSize} font-${fontWeight} mt-${marginTop} mb-${marginBottom} text-l-700`}>
+      {children}
+    </h2>
+  )
+}
+
+/**
  * Paragraph 1
  * 
  * fontSize:   string *Compatible only with font-size properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-size for details.
@@ -310,6 +346,42 @@ export function P1({
   marginTop=defaultP1.marginTop,
   marginBottom=defaultP1.marginBottom,
 }: P1) {
+  return (
+    <p className={`text-${fontSize} font-${fontWeight} mt-${marginTop} mb-${marginBottom} text-l-600`}>
+      {children}
+    </p>
+  )
+}
+
+/**
+ * Paragraph 2
+ * 
+ * fontSize:   string *Compatible only with font-size properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-size for details.
+ * fontWeight: string *Compatible only with font-weight properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-weight for details.
+ * margin:     number *Compatible only with margin properties of tailwind CSS. Check out https://tailwindcss.com/docs/margin for details.
+ */
+const defaultP2 = {
+  fontSize: 'base',
+  fontWeight: 'normal',
+  marginTop: 0,
+  marginBottom: 0,
+}
+
+interface P2 {
+  children: React.ReactNode,
+  fontSize?: string,
+  fontWeight?: string,
+  marginTop?: number,
+  marginBottom?: number,
+}
+
+export function P2({
+  children,
+  fontSize=defaultP2.fontSize,
+  fontWeight=defaultP2.fontWeight,
+  marginTop=defaultP2.marginTop,
+  marginBottom=defaultP2.marginBottom,
+}: P2) {
   return (
     <p className={`text-${fontSize} font-${fontWeight} mt-${marginTop} mb-${marginBottom} text-l-600`}>
       {children}

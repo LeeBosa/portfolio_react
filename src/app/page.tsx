@@ -7,7 +7,9 @@ import {
   Callout1,
   Callout2,
   H1,
+  H2,
   P1,
+  P2,
   Anchor,
 } from '@/modules/nodes'
 
@@ -33,6 +35,11 @@ export default function Home() {
           </Callout2>
         </ProfileInfo>
       </Profile>
+      <H2 marginTop={8} marginBottom={3}>Intro</H2>
+      <P2>
+        Explore my projects and discover how I transform concepts into digital reality. <br/>
+        Join me on this creative journey and let&#39;s build the future of the web together!
+      </P2>
     </Main>
   )
 }
