@@ -6,26 +6,24 @@ import {
   Info,
   Callout1,
   Callout2,
-  H1,
-  H2,
-  P1,
-  P2,
+  Heading,
+  Paragraph,
   Anchor,
 } from '@/modules/nodes'
 
 export default function Home() {
   return (
-    <Main>
-      <Profile paddingTop={16} paddingBottom={8}>
+    <Main paddingTop={16} paddingBottom={16}>
+      <Profile paddingBottom={8}>
         <ProfileImg src='/profile_img.png' rounded='lg'/>
         <ProfileInfo marginLeft={16}>
-          <H1>Taedonn</H1>
-          <P1 marginTop={1.5}>Frontend developer</P1>
+          <Heading>Taedonn</Heading>
+          <Paragraph fontSize='xl' marginTop={1.5}>Frontend developer</Paragraph>
           <Callout1 paddingX={6} paddingY={5} marginTop={3} rounded='lg'>
-            <Info icon='github'>
+            <Info icon='github' iconEffect>
               <Anchor href='https://github.com/taedonn' target='_blank'>https://github.com/taedonn</Anchor>
             </Info>
-            <Info icon='web' marginTop={1.5}>
+            <Info icon='web' marginTop={1.5} iconEffect>
               <Anchor href='https://taedonn.com' target='_blank'>https://taedonn.com</Anchor>
             </Info>
           </Callout1>
@@ -35,11 +33,17 @@ export default function Home() {
           </Callout2>
         </ProfileInfo>
       </Profile>
-      <H2 marginTop={8} marginBottom={3}>Intro</H2>
-      <P2>
-        Explore my projects and discover how I transform concepts into digital reality. <br/>
-        Join me on this creative journey and let&#39;s build the future of the web together!
-      </P2>
+      <Heading fontSize='3xl' marginTop={8} marginBottom={3}>About me</Heading>
+      <Paragraph letterSpacing='wide'>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, 
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+        It has survived not only five centuries, but also the leap into electronic typesetting, 
+        remaining essentially unchanged. It was popularised in the 1960s with the release of 
+        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software 
+        like Aldus PageMaker including versions of Lorem Ipsum.
+      </Paragraph>
+      <Heading fontSize='3xl' marginTop={16} marginBottom={3}>Skills</Heading>
     </Main>
   )
 }

@@ -8,14 +8,27 @@ const {
 
 /**
  * Main
+ * 
+ * padding: number *Compatible only with padding properties of tailwind CSS. Check out https://tailwindcss.com/docs/padding for details.
  */
+const defaultMain = {
+  paddingTop: 0,
+  paddingBottom: 0,
+}
+
+interface Main {
+  children: React.ReactNode,
+  paddingTop?: number,
+  paddingBottom?: number,
+}
+
 export function Main({
-  children
-}: {
-  children: React.ReactNode
-}) {
+  children,
+  paddingTop=defaultMain.paddingTop,
+  paddingBottom=defaultMain.paddingBottom,
+}: Main) {
   return (
-    <main className='w-full flex justify-center'>
+    <main className={`pt-${paddingTop} pb-${paddingBottom} w-full flex justify-center`}>
       <div style={{maxWidth: width}} className="w-full flex flex-col">
         {children}
       </div>
@@ -121,15 +134,15 @@ export function ProfileInfo({
 /**
  * Info
  * 
- * margin:    number *Compatible only with margin properties of tailwind CSS. Check out https://tailwindcss.com/docs/margin for details.
- * icon:      string web|github|linkedin|facebook|instagram|address|phone
- * iconColor: string
+ * margin:     number *Compatible only with margin properties of tailwind CSS. Check out https://tailwindcss.com/docs/margin for details.
+ * icon:       string web|github|linkedin|facebook|instagram|address|phone
+ * iconEffect: boolean
  */
 const defaultInfo = {
   marginTop: 0,
   marginBottom: 0,
   icon: '',
-  iconColor: '',
+  iconEffect: false,
 }
 
 interface Info {
@@ -137,7 +150,7 @@ interface Info {
   marginTop?: number,
   marginBottom?: number,
   icon?: string,
-  iconColor?: string,
+  iconEffect?: boolean,
 }
 
 export function Info({
@@ -145,35 +158,55 @@ export function Info({
   marginTop=defaultInfo.marginTop,
   marginBottom=defaultInfo.marginBottom,
   icon=defaultInfo.icon,
-  iconColor=defaultInfo.iconColor,
+  iconEffect=defaultInfo.iconEffect,
 }: Info) {
   return (
-    <div className={`mt-${marginTop} mb-${marginBottom} relative flex items-center gap-2 text-base text-l-600`}>
+    <div className={`mt-${marginTop} mb-${marginBottom} relative flex items-center gap-2 text-base text-l-600 group`}>
       {
         icon !== '' && 
-          <div style={iconColor !== '' ? {} : {color: iconColor}}>
-            {
-              icon === 'web'
-              ? <i className="fa-solid fa-earth-asia"></i>
-              : icon === 'github'
-                ? <i className="fa-brands fa-github"></i>
-                : icon === 'linkedin'
-                  ? <i className="fa-brands fa-linkedin-in mr-0.5"></i>
-                  : icon === 'facebook'
-                    ? <i className="fa-brands fa-square-facebook mr-0.5"></i>
-                    : icon === 'instagram'
-                      ? <i className="fa-brands fa-instagram mr-0.5"></i>
-                      : icon === 'address'
-                        ? <i className="fa-regular fa-compass"></i>
-                        : icon === 'phone'
-                          ? <i className="fa-solid fa-headset"></i>
-                          : icon === 'email'
-                            ? <i className="fa-solid fa-at"></i>
-                            : <></>
-            }
+          <div className='relative'>
+            { iconEffect && <i className="fa-solid fa-angle-right absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 group-hover:scale-110 group-hover:opacity-100 duration-200"></i> }
+            <div className={iconEffect ? 'group-hover:scale-0 group-hover:opacity-0 duration-200' : ''}>
+              {
+                icon === 'web'
+                ? <i className="fa-solid fa-earth-asia"></i>
+                : icon === 'github'
+                  ? <i className="fa-brands fa-github"></i>
+                  : icon === 'linkedin'
+                    ? <i className="fa-brands fa-linkedin-in mr-0.5"></i>
+                    : icon === 'facebook'
+                      ? <i className="fa-brands fa-square-facebook mr-0.5"></i>
+                      : icon === 'instagram'
+                        ? <i className="fa-brands fa-instagram mr-0.5"></i>
+                        : icon === 'address'
+                          ? <i className="fa-regular fa-compass"></i>
+                          : icon === 'phone'
+                            ? <i className="fa-solid fa-headset"></i>
+                            : icon === 'email'
+                              ? <i className="fa-solid fa-at"></i>
+                              : <></>
+              }
+            </div>
           </div>
       }
       <div>{children}</div>
+    </div>
+  )
+}
+
+/**
+ * Skill Set
+ */
+interface SkillSet {
+  children: React.ReactNode,
+}
+
+export function SkillSet({
+  children
+}: SkillSet) {
+  return (
+    <div>
+
     </div>
   )
 }
@@ -211,7 +244,7 @@ export function Callout1({
   rounded=defaultCallout1.rounded,
 }: Callout1) {
   return (
-    <div className={`px-${paddingX} py-${paddingY} mt-${marginTop} mb-${marginBottom} rounded-${rounded} border-2 border-h-main/40 bg-h-main/10 duration-100`}>{children}</div>
+    <div className={`px-${paddingX} py-${paddingY} mt-${marginTop} mb-${marginBottom} rounded-${rounded} border-2 border-h-main/50 bg-h-main/10`}>{children}</div>
   )
 }
 
@@ -248,142 +281,84 @@ export function Callout2({
   rounded=defaultCallout2.rounded,
 }: Callout2) {
   return (
-    <div className={`px-${paddingX} py-${paddingY} mt-${marginTop} mb-${marginBottom} rounded-${rounded} border-2 border-l-400/70 bg-l-300/30 duration-100`}>{children}</div>
+    <div className={`px-${paddingX} py-${paddingY} mt-${marginTop} mb-${marginBottom} rounded-${rounded} border-2 border-l-500/50 bg-l-300/30`}>{children}</div>
   )
 }
 
 /**
- * Heading 1
+ * Heading
  * 
  * fontSize:   string *Compatible only with font-size properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-size for details.
  * fontWeight: string *Compatible only with font-weight properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-weight for details.
  */
-const defaultH1 = {
+const defaultHeading = {
   fontSize: '4xl',
-  fontWeight: 'semibold'
+  fontWeight: 'semibold',
+  marginTop: 0,
+  marginBottom: 0,
 }
 
-interface H1 {
+interface Heading {
   children: React.ReactNode,
   fontSize?: string,
   fontWeight?: string,
+  marginTop?: number,
+  marginBottom?: number,
 }
 
-export function H1({
+export function Heading({
   children,
-  fontSize=defaultH1.fontSize,
-  fontWeight=defaultH1.fontWeight,
-}: H1) {
+  fontSize=defaultHeading.fontSize,
+  fontWeight=defaultHeading.fontWeight,
+  marginTop=defaultHeading.marginTop,
+  marginBottom=defaultHeading.marginBottom,
+}: Heading) {
   return (
-    <h1 className={`text-${fontSize} font-${fontWeight} text-l-700`}>
+    <h1 className={`text-${fontSize} font-${fontWeight} mt-${marginTop} mb-${marginBottom} text-l-700`}>
       {children}
     </h1>
   )
 }
 
 /**
- * Heading 2
+ * Paragraph
  * 
- * fontSize:   string *Compatible only with font-size properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-size for details.
- * fontWeight: string *Compatible only with font-weight properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-weight for details.
- * margin:     number *Compatible only with margin properties of tailwind CSS. Check out https://tailwindcss.com/docs/margin for details.
+ * fontSize:      string *Compatible only with font-size properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-size for details.
+ * fontWeight:    string *Compatible only with font-weight properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-weight for details.
+ * letterSpacing: string *Compatible only with Letter Spacing properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-weight for details.
+ * wordBreak:     string break|keep
+ * margin:        number *Compatible only with margin properties of tailwind CSS. Check out https://tailwindcss.com/docs/margin for details.
  */
-const defaultH2 = {
-  fontSize: '2xl',
-  fontWeight: 'semibold',
-  marginTop: 0,
-  marginBottom: 0,
-}
-
-interface H2 {
-  children: React.ReactNode,
-  fontSize?: string,
-  fontWeight?: string,
-  marginTop?: number,
-  marginBottom?: number,
-}
-
-export function H2({
-  children,
-  fontSize=defaultH2.fontSize,
-  fontWeight=defaultH2.fontWeight,
-  marginTop=defaultH2.marginTop,
-  marginBottom=defaultH2.marginBottom,
-}: H2) {
-  return (
-    <h2 className={`text-${fontSize} font-${fontWeight} mt-${marginTop} mb-${marginBottom} text-l-700`}>
-      {children}
-    </h2>
-  )
-}
-
-/**
- * Paragraph 1
- * 
- * fontSize:   string *Compatible only with font-size properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-size for details.
- * fontWeight: string *Compatible only with font-weight properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-weight for details.
- * margin:     number *Compatible only with margin properties of tailwind CSS. Check out https://tailwindcss.com/docs/margin for details.
- */
-const defaultP1 = {
-  fontSize: 'xl',
-  fontWeight: 'normal',
-  marginTop: 0,
-  marginBottom: 0,
-}
-
-interface P1 {
-  children: React.ReactNode,
-  fontSize?: string,
-  fontWeight?: string,
-  marginTop?: number,
-  marginBottom?: number,
-}
-
-export function P1({
-  children,
-  fontSize=defaultP1.fontSize,
-  fontWeight=defaultP1.fontWeight,
-  marginTop=defaultP1.marginTop,
-  marginBottom=defaultP1.marginBottom,
-}: P1) {
-  return (
-    <p className={`text-${fontSize} font-${fontWeight} mt-${marginTop} mb-${marginBottom} text-l-600`}>
-      {children}
-    </p>
-  )
-}
-
-/**
- * Paragraph 2
- * 
- * fontSize:   string *Compatible only with font-size properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-size for details.
- * fontWeight: string *Compatible only with font-weight properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-weight for details.
- * margin:     number *Compatible only with margin properties of tailwind CSS. Check out https://tailwindcss.com/docs/margin for details.
- */
-const defaultP2 = {
+const defaultParagraph = {
   fontSize: 'base',
   fontWeight: 'normal',
+  letterSpacing: 'wide',
+  wordBreak: 'break',
   marginTop: 0,
   marginBottom: 0,
 }
 
-interface P2 {
+interface Paragraph {
   children: React.ReactNode,
   fontSize?: string,
   fontWeight?: string,
+  letterSpacing?: string,
+  wordBreak?: string,
   marginTop?: number,
   marginBottom?: number,
 }
 
-export function P2({
+export function Paragraph({
   children,
-  fontSize=defaultP2.fontSize,
-  fontWeight=defaultP2.fontWeight,
-  marginTop=defaultP2.marginTop,
-  marginBottom=defaultP2.marginBottom,
-}: P2) {
+  fontSize=defaultParagraph.fontSize,
+  fontWeight=defaultParagraph.fontWeight,
+  letterSpacing=defaultParagraph.letterSpacing,
+  wordBreak=defaultParagraph.wordBreak,
+  marginTop=defaultParagraph.marginTop,
+  marginBottom=defaultParagraph.marginBottom,
+}: Paragraph) {
   return (
-    <p className={`text-${fontSize} font-${fontWeight} mt-${marginTop} mb-${marginBottom} text-l-600`}>
+    <p className={`text-${fontSize} font-${fontWeight} tracking-${letterSpacing} ${wordBreak === 'keep' ? 'break-keep' : 'break-all'} mt-${marginTop} mb-${marginBottom} text-l-600`}>
       {children}
     </p>
   )
@@ -415,8 +390,8 @@ export function Anchor({
       target={target}
       className="group"
     >
-      <span className="border-b border-h-transparent group-hover:border-h-main group-hover:text-h-main duration-100">{children}</span>
-      <i className="fa-solid fa-link ml-1 text-xs group-hover:text-h-main duration-100"></i>
+      <span className="border-b border-h-transparent group-hover:border-h-main group-hover:text-h-main duration-200">{children}</span>
+      <i className="fa-solid fa-link ml-1 text-xs group-hover:text-h-main duration-200"></i>
     </Link>
   )
 }
