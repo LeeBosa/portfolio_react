@@ -1,9 +1,13 @@
 import {
   Main,
-  Profile,
+  ProfileProvider,
   ProfileImg,
   ProfileInfo,
   IconProvider,
+  SkillProvider,
+  SkillTitle,
+  SkillList,
+  Skill,
   Callout,
   Heading,
   Paragraph,
@@ -13,7 +17,7 @@ import {
 export default function Home() {
   return (
     <Main paddingTop={16} paddingBottom={16}>
-      <Profile paddingBottom={8}>
+      <ProfileProvider paddingBottom={8}>
         <ProfileImg src='/profile_img.png' rounded='lg'/>
         <ProfileInfo marginLeft={16}>
           <Heading fontSize='4xl'>Taedonn</Heading>
@@ -31,7 +35,7 @@ export default function Home() {
             <IconProvider icon='email' marginTop={1.5}>taedonn@taedonn.com</IconProvider>
           </Callout>
         </ProfileInfo>
-      </Profile>
+      </ProfileProvider>
       <Heading marginTop={8} marginBottom={3}>About me</Heading>
       <Paragraph letterSpacing='wide'>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -49,7 +53,34 @@ export default function Home() {
         Sections 1.10.32 and 1.10.33 from &#34;de Finibus Bonorum et Malorum&#34; by Cicero are also reproduced 
         in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
       </Paragraph>
-      <Heading marginTop={20} marginBottom={3} tooltip tooltipMsg={'B : Beginner<br/>H : Hobby<br/>P : Pro'}>Skills</Heading>
+      <Heading marginTop={20} marginBottom={3} tooltip tooltipMsg={'Developing : grey<br/>Production : purple'}>Skills</Heading>
+      <SkillProvider paddingTop={3}>
+        <SkillTitle>Languages</SkillTitle>
+        <SkillList>
+          <Skill icon='square-js' fill>JavaScript</Skill>
+          <Skill>TypeScript</Skill>
+          <Skill>HTML/CSS</Skill>
+        </SkillList>
+      </SkillProvider>
+      <SkillProvider>
+        <SkillTitle>Frameworks</SkillTitle>
+        <SkillList>
+          <Skill icon='node-js' fill>Node.js</Skill>
+          <Skill fill>Next.js</Skill>
+          <Skill icon='vuejs'>Vue.js</Skill>
+          <Skill>Nuxt.js</Skill>
+        </SkillList>
+      </SkillProvider>
+      <SkillProvider>
+        <SkillTitle>Libraries</SkillTitle>
+        <SkillList>
+          <Skill icon='react' fill>React</Skill>
+          <Skill>Tailwind CSS</Skill>
+          <Skill icon='font-awesome'>Font Awesome</Skill>
+          <Skill>Next Auth</Skill>
+          <Skill>Json Web Token</Skill>
+        </SkillList>
+      </SkillProvider>
     </Main>
   )
 }

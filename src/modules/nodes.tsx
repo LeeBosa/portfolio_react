@@ -1,4 +1,3 @@
-import { defaultHead } from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -38,27 +37,27 @@ export const Main = ({
 }
 
 /**
- * Profile
+ * Profile provider
  * 
  * padding: number *Compatible only with padding properties of tailwind CSS. Check out https://tailwindcss.com/docs/padding for details.
  * border:  boolean *If true, border-bottom will be applied.
  */
-const defaultProfile = {
+const defaultProfileProvider = {
   paddingTop: 0,
   paddingBottom: 0,
 }
 
-interface Profile {
+interface ProfileProvider {
   children: React.ReactNode,
   paddingTop?: number,
   paddingBottom?: number,
 }
 
-export function Profile({
+export function ProfileProvider({
   children,
-  paddingTop=defaultProfile.paddingTop,
-  paddingBottom=defaultProfile.paddingBottom,
-}: Profile) {
+  paddingTop=defaultProfileProvider.paddingTop,
+  paddingBottom=defaultProfileProvider.paddingBottom,
+}: ProfileProvider) {
   return (
     <div
       className={`flex pt-${paddingTop} pb-${paddingBottom} border-b border-l-300`}
@@ -133,7 +132,7 @@ export function ProfileInfo({
 }
 
 /**
- * Info
+ * Icon provider
  * 
  * margin:     number *Compatible only with margin properties of tailwind CSS. Check out https://tailwindcss.com/docs/margin for details.
  * icon:       string web|github|linkedin|facebook|instagram|address|phone
@@ -196,18 +195,102 @@ export function IconProvider({
 }
 
 /**
- * Skill Set
+ * Skill provider
+ * 
+ * padding: number *Compatible only with padding properties of tailwind CSS. Check out https://tailwindcss.com/docs/padding for details.
  */
-interface SkillSet {
+const defaultSkillProvider = {
+  paddingTop: 6,
+  paddingBottom: 6,
+}
+
+interface SkillProvider {
+  children: React.ReactNode,
+  paddingTop?: number,
+  paddingBottom?: number,
+}
+
+export function SkillProvider({
+  children,
+  paddingTop=defaultSkillProvider.paddingTop,
+  paddingBottom=defaultSkillProvider.paddingBottom,
+}: SkillProvider) {
+  return (
+    <div className={`w-full flex pt-${paddingTop} pb-${paddingBottom} border-b border-l-300`}>{children}</div>
+  )
+}
+
+/**
+ * Skill title
+ * 
+ * width:    number *Compatible only with width properties of tailwind CSS. Check out https://tailwindcss.com/docs/width for details.
+ * fontSize: string *Compatible only with font-size properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-size for details.
+ */
+const defaultSkillTitle = {
+  fontSize: 'lg',
+}
+
+interface SkillTitle {
+  children: React.ReactNode,
+  fontSize?: string,
+}
+
+export function SkillTitle({
+  children,
+  fontSize=defaultSkillTitle.fontSize,
+}: SkillTitle) {
+  return (
+    <div className={`w-40 shrink-0 text-${fontSize} text-l-700`}>{children}</div>
+  )
+}
+
+/**
+ * Skill list
+ */
+interface SkillList {
   children: React.ReactNode,
 }
 
-export function SkillSet({
+export function SkillList({
   children
-}: SkillSet) {
+}: SkillList) {
   return (
-    <div>
-      
+    <div className="flex flex-wrap gap-2">{children}</div>
+  )
+}
+
+/**
+ * Skill
+ * 
+ * icon: string *Compatible only with fontawesome icon name. Check out https://fontawesome.com/icons for details.
+ * fill: boolean
+ */
+const defaultSkill = {
+  icon: '',
+  fill: false,
+}
+
+interface Skill {
+  children: React.ReactNode,
+  icon?: string,
+  fill?: boolean,
+}
+
+export function Skill({
+  children,
+  icon=defaultSkill.icon,
+  fill=defaultSkill.fill,
+}: Skill) {
+  return (
+    <div className={`text-sm px-4 py-1 flex items-center gap-2.5 rounded-full ${fill ? 'border-2 border-h-main/50 bg-h-main/10 text-h-main' : 'border border-l-400 text-l-600'}`}>
+      <div className='text-xl'>
+        {
+          icon === ''
+            ? <i className="fa-solid fa-code"></i>
+            : <i className={`fa-brands fa-${icon}`}></i>
+        }
+      </div>
+      {children}
     </div>
   )
 }
@@ -300,7 +383,7 @@ export function Heading({
             <i className="fa-regular fa-circle-question group-hover:scale-0 group-hover:opacity-0 duration-200"></i>
             {
               tooltipMsg !== '' &&
-                <div className="w-max text-xs font-normal tracking-wide pl-3.5 absolute right-0 top-1/2 translate-x-full -translate-y-1/2 invisible group-hover:visible">
+                <div className="w-max text-xs font-normal tracking-wide pl-4 absolute right-0 top-1/2 translate-x-full -translate-y-1/2 invisible group-hover:visible">
                   <div className="w-full px-3.5 py-2 rounded-lg text-l-100 bg-l-700 origin-left scale-0 -translate-x-3 opacity-0 group-hover:scale-100 group-hover:translate-x-0 group-hover:opacity-100 duration-200">
                     <div dangerouslySetInnerHTML={{__html: tooltipMsg}}></div>
                     <div className="w-2.5 h-2.5 rotate-45 absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-l-700"></div>
@@ -372,6 +455,7 @@ interface Anchor {
   href: string,
   target?: string,
 }
+
 export function Anchor({
   children,
   href,
