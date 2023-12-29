@@ -49,7 +49,7 @@ export default function Home() {
         Sections 1.10.32 and 1.10.33 from &#34;de Finibus Bonorum et Malorum&#34; by Cicero are also reproduced 
         in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
       </Paragraph>
-      <Heading marginTop={20} marginBottom={3} tooltip>Skills</Heading>
+      <Heading marginTop={20} marginBottom={3} tooltip tooltipMsg={'B : Beginner<br/>H : Hobby<br/>P : Pro'}>Skills</Heading>
     </Main>
   )
 }

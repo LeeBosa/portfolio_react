@@ -1,3 +1,4 @@
+import { defaultHead } from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -206,7 +207,7 @@ export function SkillSet({
 }: SkillSet) {
   return (
     <div>
-
+      
     </div>
   )
 }
@@ -283,6 +284,7 @@ interface Heading {
 export function Heading({
   children,
   tooltip=defaultHeading.tooltip,
+  tooltipMsg=defaultHeading.tooltipMsg,
   fontSize=defaultHeading.fontSize,
   fontWeight=defaultHeading.fontWeight,
   marginTop=defaultHeading.marginTop,
@@ -296,6 +298,15 @@ export function Heading({
           <div className="relative cursor-pointer group">
             <i className="fa-solid fa-circle-question absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 duration-200"></i>
             <i className="fa-regular fa-circle-question group-hover:scale-0 group-hover:opacity-0 duration-200"></i>
+            {
+              tooltipMsg !== '' &&
+                <div className="w-max text-xs font-normal tracking-wide pl-3.5 absolute right-0 top-1/2 translate-x-full -translate-y-1/2 invisible group-hover:visible">
+                  <div className="w-full px-3.5 py-2 rounded-lg text-l-100 bg-l-700 origin-left scale-0 -translate-x-3 opacity-0 group-hover:scale-100 group-hover:translate-x-0 group-hover:opacity-100 duration-200">
+                    <div dangerouslySetInnerHTML={{__html: tooltipMsg}}></div>
+                    <div className="w-2.5 h-2.5 rotate-45 absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-l-700"></div>
+                  </div>
+                </div>
+            }
           </div>
       }
     </h1>
