@@ -7,9 +7,7 @@ const { title, description, icon } = require('../../nexume.config')
 export const metadata: Metadata = {
   title: title,
   description: description,
-  icons: {
-    icon: icon,
-  }
+  icons: { icon: icon }
 }
 
 const montserrat = Montserrat({ subsets: ['latin'] })

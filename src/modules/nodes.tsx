@@ -1,10 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
 const nexume = require('../../nexume.config')
 const {
 	width,
-} = nexume;
+} = nexume
 
 /**
  * Main
@@ -22,11 +22,11 @@ interface Main {
   paddingBottom?: number,
 }
 
-export function Main({
+export const Main = ({
   children,
   paddingTop=defaultMain.paddingTop,
   paddingBottom=defaultMain.paddingBottom,
-}: Main) {
+}: Main) => {
   return (
     <main className={`pt-${paddingTop} pb-${paddingBottom} w-full flex justify-center`}>
       <div style={{maxWidth: width}} className="w-full flex flex-col">
@@ -138,14 +138,14 @@ export function ProfileInfo({
  * icon:       string web|github|linkedin|facebook|instagram|address|phone
  * iconEffect: boolean
  */
-const defaultInfo = {
+const defaultIconProvider = {
   marginTop: 0,
   marginBottom: 0,
   icon: '',
   iconEffect: false,
 }
 
-interface Info {
+interface IconProvider {
   children: React.ReactNode,
   marginTop?: number,
   marginBottom?: number,
@@ -153,13 +153,13 @@ interface Info {
   iconEffect?: boolean,
 }
 
-export function Info({
+export function IconProvider({
   children,
-  marginTop=defaultInfo.marginTop,
-  marginBottom=defaultInfo.marginBottom,
-  icon=defaultInfo.icon,
-  iconEffect=defaultInfo.iconEffect,
-}: Info) {
+  marginTop=defaultIconProvider.marginTop,
+  marginBottom=defaultIconProvider.marginBottom,
+  icon=defaultIconProvider.icon,
+  iconEffect=defaultIconProvider.iconEffect,
+}: IconProvider) {
   return (
     <div className={`mt-${marginTop} mb-${marginBottom} relative flex items-center gap-2 text-base text-l-600 group`}>
       {
@@ -212,13 +212,15 @@ export function SkillSet({
 }
 
 /**
- * Callout1
+ * Callout
  * 
+ * color:   string *default|main
  * padding: number *Compatible only with padding properties of tailwind CSS. Check out https://tailwindcss.com/docs/padding for details.
  * margin:  number *Compatible only with margin properties of tailwind CSS. Check out https://tailwindcss.com/docs/margin for details.
  * rounded: string *none|sm|md|lg|full
  */
-const defaultCallout1 = {
+const defaultCallout = {
+  color: 'default',
   paddingX: 10,
   paddingY: 10,
   marginTop: 0,
@@ -226,8 +228,9 @@ const defaultCallout1 = {
   rounded: '',
 }
 
-interface Callout1 {
+interface Callout {
   children: React.ReactNode,
+  color?: string,
   paddingX?: number,
   paddingY?: number,
   marginTop?: number,
@@ -235,64 +238,33 @@ interface Callout1 {
   rounded?: string,
 }
 
-export function Callout1({
+export function Callout({
   children,
-  paddingX=defaultCallout1.paddingX,
-  paddingY=defaultCallout1.paddingY,
-  marginTop=defaultCallout1.marginTop,
-  marginBottom=defaultCallout1.marginBottom,
-  rounded=defaultCallout1.rounded,
-}: Callout1) {
+  paddingX=defaultCallout.paddingX,
+  paddingY=defaultCallout.paddingY,
+  marginTop=defaultCallout.marginTop,
+  marginBottom=defaultCallout.marginBottom,
+  rounded=defaultCallout.rounded,
+  color=defaultCallout.color,
+}: Callout) {
   return (
-    <div className={`px-${paddingX} py-${paddingY} mt-${marginTop} mb-${marginBottom} rounded-${rounded} border-2 border-h-main/50 bg-h-main/10`}>{children}</div>
-  )
-}
-
-/**
- * Callout2
- * 
- * padding: number *Compatible only with padding properties of tailwind CSS. Check out https://tailwindcss.com/docs/padding for details.
- * margin:  number *Compatible only with margin properties of tailwind CSS. Check out https://tailwindcss.com/docs/margin for details.
- * rounded: string *none|sm|md|lg|full
- */
-const defaultCallout2 = {
-  paddingX: 10,
-  paddingY: 10,
-  marginTop: 0,
-  marginBottom: 0,
-  rounded: '',
-}
-
-interface Callout2 {
-  children: React.ReactNode,
-  paddingX?: number,
-  paddingY?: number,
-  marginTop?: number,
-  marginBottom?: number,
-  rounded?: string,
-}
-
-export function Callout2({
-  children,
-  paddingX=defaultCallout2.paddingX,
-  paddingY=defaultCallout2.paddingY,
-  marginTop=defaultCallout2.marginTop,
-  marginBottom=defaultCallout2.marginBottom,
-  rounded=defaultCallout2.rounded,
-}: Callout2) {
-  return (
-    <div className={`px-${paddingX} py-${paddingY} mt-${marginTop} mb-${marginBottom} rounded-${rounded} border-2 border-l-500/50 bg-l-300/30`}>{children}</div>
+    <div className={`px-${paddingX} py-${paddingY} mt-${marginTop} mb-${marginBottom} rounded-${rounded} border-2 ${color === 'default' ? 'border-l-500/50 bg-l-300/30' : 'border-h-main/50 bg-h-main/10'}`}>{children}</div>
   )
 }
 
 /**
  * Heading
  * 
+ * tooltip:    boolean
+ * tooltipMsg: string
  * fontSize:   string *Compatible only with font-size properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-size for details.
  * fontWeight: string *Compatible only with font-weight properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-weight for details.
+ * margin:     number *Compatible only with margin properties of tailwind CSS. Check out https://tailwindcss.com/docs/margin for details.
  */
 const defaultHeading = {
-  fontSize: '4xl',
+  tooltip: false,
+  tooltipMsg: '',
+  fontSize: '3xl',
   fontWeight: 'semibold',
   marginTop: 0,
   marginBottom: 0,
@@ -300,6 +272,8 @@ const defaultHeading = {
 
 interface Heading {
   children: React.ReactNode,
+  tooltip?: boolean,
+  tooltipMsg?: string,
   fontSize?: string,
   fontWeight?: string,
   marginTop?: number,
@@ -308,14 +282,22 @@ interface Heading {
 
 export function Heading({
   children,
+  tooltip=defaultHeading.tooltip,
   fontSize=defaultHeading.fontSize,
   fontWeight=defaultHeading.fontWeight,
   marginTop=defaultHeading.marginTop,
   marginBottom=defaultHeading.marginBottom,
 }: Heading) {
   return (
-    <h1 className={`text-${fontSize} font-${fontWeight} mt-${marginTop} mb-${marginBottom} text-l-700`}>
+    <h1 className={`text-${fontSize} font-${fontWeight} mt-${marginTop} mb-${marginBottom} flex gap-2.5 text-l-700`}>
       {children}
+      {
+        tooltip &&
+          <div className="relative cursor-pointer group">
+            <i className="fa-solid fa-circle-question absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 duration-200"></i>
+            <i className="fa-regular fa-circle-question group-hover:scale-0 group-hover:opacity-0 duration-200"></i>
+          </div>
+      }
     </h1>
   )
 }
@@ -388,10 +370,10 @@ export function Anchor({
     <Link
       href={href}
       target={target}
-      className="group"
+      className="group text-h-main"
     >
-      <span className="border-b border-h-transparent group-hover:border-h-main group-hover:text-h-main duration-200">{children}</span>
-      <i className="fa-solid fa-link ml-1 text-xs group-hover:text-h-main duration-200"></i>
+      <span className="rounded-md border-2 border-h-transparent group-hover:border-h-main group-focus:border-h-main duration-200">{children}</span>
+      <i className="fa-solid fa-link ml-1 text-xs"></i>
     </Link>
   )
 }
