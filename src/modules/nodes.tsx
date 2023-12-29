@@ -240,7 +240,7 @@ export function SkillTitle({
   fontSize=defaultSkillTitle.fontSize,
 }: SkillTitle) {
   return (
-    <div className={`w-40 shrink-0 text-${fontSize} text-l-700`}>{children}</div>
+    <div className={`w-44 shrink-0 text-${fontSize} text-l-700`}>{children}</div>
   )
 }
 
@@ -286,7 +286,7 @@ export function Skill({
       <div className='text-xl'>
         {
           icon === ''
-            ? <i className="fa-solid fa-code"></i>
+            ? <i className="fa-solid fa-code text-lg"></i>
             : <i className={`fa-brands fa-${icon}`}></i>
         }
       </div>

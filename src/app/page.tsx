@@ -58,6 +58,7 @@ export default function Home() {
         <SkillTitle>Languages</SkillTitle>
         <SkillList>
           <Skill icon='square-js' fill>JavaScript</Skill>
+          <Skill icon='java'>Java</Skill>
           <Skill>TypeScript</Skill>
           <Skill>HTML/CSS</Skill>
         </SkillList>
@@ -77,10 +78,38 @@ export default function Home() {
           <Skill icon='react' fill>React</Skill>
           <Skill>Tailwind CSS</Skill>
           <Skill icon='font-awesome'>Font Awesome</Skill>
+          <Skill>Redux</Skill>
+          <Skill>Pinia</Skill>
+          <Skill>Axios</Skill>
           <Skill>Next Auth</Skill>
           <Skill>Json Web Token</Skill>
         </SkillList>
       </SkillProvider>
+      <SkillProvider>
+        <SkillTitle>Databases</SkillTitle>
+        <SkillList>
+          <Skill fill>Prisma</Skill>
+          <Skill>Firebase</Skill>
+        </SkillList>
+      </SkillProvider>
+      <SkillProvider>
+        <SkillTitle>Tools & IDEs</SkillTitle>
+        <SkillList>
+          <Skill icon='git-alt'>Git</Skill>
+          <Skill icon='github'>GitHub</Skill>
+          <Skill icon='sourcetree'>sourcetree</Skill>
+          <Skill icon='jira'>Jira</Skill>
+          <Skill>VSCode</Skill>
+        </SkillList>
+      </SkillProvider>
+      <SkillProvider>
+        <SkillTitle>AWS</SkillTitle>
+        <SkillList>
+          <Skill icon='aws'>Amazon S3</Skill>
+          <Skill icon='aws'>Amazon API Gateway</Skill>
+        </SkillList>
+      </SkillProvider>
+      <Heading marginTop={20} marginBottom={3}>Experiences</Heading>
     </Main>
   )
 }
