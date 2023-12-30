@@ -339,15 +339,21 @@ export function Callout({
 /**
  * Heading
  * 
- * tooltip:    boolean
- * tooltipMsg: string
- * fontSize:   string *Compatible only with font-size properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-size for details.
- * fontWeight: string *Compatible only with font-weight properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-weight for details.
- * margin:     number *Compatible only with margin properties of tailwind CSS. Check out https://tailwindcss.com/docs/margin for details.
+ * tooltip:     boolean
+ * tooltipMsg:  string
+ * period:      boolean
+ * startPeriod: string YYYY-MM
+ * endPeriod:   string YYYY-MM
+ * fontSize:    string *Compatible only with font-size properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-size for details.
+ * fontWeight:  string *Compatible only with font-weight properties of tailwind CSS. Check out https://tailwindcss.com/docs/font-weight for details.
+ * margin:      number *Compatible only with margin properties of tailwind CSS. Check out https://tailwindcss.com/docs/margin for details.
  */
 const defaultHeading = {
   tooltip: false,
   tooltipMsg: '',
+  period: false,
+  startPeriod: '',
+  endPeriod: '',
   fontSize: '3xl',
   fontWeight: 'semibold',
   marginTop: 0,
@@ -358,6 +364,9 @@ interface Heading {
   children: React.ReactNode,
   tooltip?: boolean,
   tooltipMsg?: string,
+  period?: boolean,
+  startPeriod?: string,
+  endPeriod?: string,
   fontSize?: string,
   fontWeight?: string,
   marginTop?: number,
@@ -368,6 +377,9 @@ export function Heading({
   children,
   tooltip=defaultHeading.tooltip,
   tooltipMsg=defaultHeading.tooltipMsg,
+  period=defaultHeading.period,
+  startPeriod=defaultHeading.startPeriod,
+  endPeriod=defaultHeading.endPeriod,
   fontSize=defaultHeading.fontSize,
   fontWeight=defaultHeading.fontWeight,
   marginTop=defaultHeading.marginTop,
@@ -390,6 +402,12 @@ export function Heading({
                   </div>
                 </div>
             }
+          </div>
+      }
+      {
+        period &&
+          <div>
+
           </div>
       }
     </h1>

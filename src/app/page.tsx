@@ -95,7 +95,7 @@ export default function Home() {
       <SkillProvider>
         <SkillTitle>Tools & IDEs</SkillTitle>
         <SkillList>
-          <Skill icon='git-alt'>Git</Skill>
+          <Skill icon='git-alt' fill>Git</Skill>
           <Skill icon='github'>GitHub</Skill>
           <Skill icon='sourcetree'>sourcetree</Skill>
           <Skill icon='jira'>Jira</Skill>
