@@ -407,7 +407,7 @@ export function Heading({
       {
         period &&
           <div>
-
+            
           </div>
       }
     </h1>
