@@ -385,6 +385,23 @@ export function Heading({
   marginTop=defaultHeading.marginTop,
   marginBottom=defaultHeading.marginBottom,
 }: Heading) {
+  const getDateDiff = (d1: string, d2: string) => {
+    const pattern = /^\d{4}-\d{2}$/;
+    let date1, date2;
+
+    if (d1 !== '' && pattern.test(d1)) {
+      if (d2 !== '' && pattern.test(d2)) {
+        date1 = new Date(d1);
+        date2 = new Date(d2);
+      } else {
+        date1 = new Date(d1);
+        date2 = new Date();
+      }
+    }
+
+    return date1 + '';
+  }
+
   return (
     <h1 className={`text-${fontSize} font-${fontWeight} mt-${marginTop} mb-${marginBottom} flex gap-2.5 text-l-700`}>
       {children}
@@ -406,9 +423,7 @@ export function Heading({
       }
       {
         period &&
-          <div>
-            
-          </div>
+          <div>{getDateDiff(startPeriod, endPeriod)}</div>
       }
     </h1>
   )
