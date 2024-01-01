@@ -109,7 +109,7 @@ export default function Home() {
           <Skill icon='aws'>Amazon API Gateway</Skill>
         </SkillList>
       </SkillProvider>
-      <Heading marginTop={20} marginBottom={3} period startPeriod='202x-12'>Experiences</Heading>
+      <Heading marginTop={20} marginBottom={3} period startPeriod='2023-12'>Experiences</Heading>
     </Main>
   )
 }

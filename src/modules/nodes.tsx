@@ -387,19 +387,18 @@ export function Heading({
 }: Heading) {
   const getDateDiff = (d1: string, d2: string) => {
     const pattern = /^\d{4}-\d{2}$/;
-    let date1, date2;
+    const date = new Date();
+    let date1, date2, convertYToM;
 
     if (d1 !== '' && pattern.test(d1)) {
-      if (d2 !== '' && pattern.test(d2)) {
-        date1 = new Date(d1);
-        date2 = new Date(d2);
-      } else {
-        date1 = new Date(d1);
-        date2 = new Date();
-      }
-    }
+      date1 = d1;
 
-    return date1 + '';
+      if (d2 !== '' && pattern.test(d2)) date2 = d2;
+      else date2 = date.getFullYear() + '-' + (date.getMonth() < 10 ? '0' + date.getMonth() : date.getMonth());
+
+      convertYToM = ((Number(date2.split('-')[0]) - Number(date1.split('-')[0])) * 12) + (Number(date1.split('-')[1]) - 12) + Number(date2.split('-')[1]);
+      return convertYToM;
+    } else return '';
   }
 
   return (
@@ -423,7 +422,11 @@ export function Heading({
       }
       {
         period &&
-          <div>{getDateDiff(startPeriod, endPeriod)}</div>
+          <div>
+            {
+              getDateDiff(startPeriod, endPeriod) !== '' && getDateDiff(startPeriod, endPeriod)
+            }
+          </div>
       }
     </h1>
   )
