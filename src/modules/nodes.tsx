@@ -386,19 +386,31 @@ export function Heading({
   marginBottom=defaultHeading.marginBottom,
 }: Heading) {
   const getDateDiff = (d1: string, d2: string) => {
-    const pattern = /^\d{4}-\d{2}$/;
-    const date = new Date();
-    let date1, date2, convertYToM;
+    const pattern = /^\d{4}-\d{2}$/
+    const date = new Date()
+    let d1y, d1m, d2y, d2m, dateDiff, yToM
 
     if (d1 !== '' && pattern.test(d1)) {
-      date1 = d1;
+      d1y = Number(d1.split('-')[0])
+      d1m = Number(d1.split('-')[1])
 
-      if (d2 !== '' && pattern.test(d2)) date2 = d2;
-      else date2 = date.getFullYear() + '-' + (date.getMonth() < 10 ? '0' + date.getMonth() : date.getMonth());
+      if (d2 !== '' && pattern.test(d2)) {
+        d2y = Number(d2.split('-')[0])
+        d2m = Number(d2.split('-')[1])
+      } else {
+        d2y = date.getFullYear()
+        d2m = date.getMonth()
+      }
+      
+      yToM = d2y === d1y
+        ? d2m - d1m
+        : d2y - d1y === 1
+          ? (13 - d1m) + d2m
+          : ((d2y - d1y - 1) * 12) + (13 - d1m) + d2m
+      dateDiff = (Math.ceil((yToM / 12) * 10) / 10).toString()
 
-      convertYToM = ((Number(date2.split('-')[0]) - Number(date1.split('-')[0])) * 12) + (Number(date1.split('-')[1]) - 12) + Number(date2.split('-')[1]);
-      return convertYToM;
-    } else return '';
+      return dateDiff.includes('.') ? (dateDiff.split('.')[0] + 'y ' + dateDiff.split('.')[1] + 'm') : (dateDiff + 'y')
+    } else return ''
   }
 
   return (
@@ -422,10 +434,10 @@ export function Heading({
       }
       {
         period &&
-          <div>
-            {
-              getDateDiff(startPeriod, endPeriod) !== '' && getDateDiff(startPeriod, endPeriod)
-            }
+          <div className="flex items-center">
+            <div className="px-2.5 py-0.5 text-base font-normal tracking-wider rounded-md border-2 border-l-500/50 bg-l-300/30 text-l-600">
+              + { getDateDiff(startPeriod, endPeriod) !== '' && getDateDiff(startPeriod, endPeriod) }
+            </div>
           </div>
       }
     </h1>
@@ -503,7 +515,7 @@ export function Anchor({
       target={target}
       className="group text-h-main"
     >
-      <span className="rounded-md border-2 border-h-transparent group-hover:border-h-main group-focus:border-h-main duration-200">{children}</span>
+      <span className="rounded-md border-2 border-h-transparent group-hover:border-h-main duration-200">{children}</span>
       <i className="fa-solid fa-link ml-1 text-xs"></i>
     </Link>
   )
