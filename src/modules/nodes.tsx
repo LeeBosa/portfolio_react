@@ -409,7 +409,7 @@ export function Heading({
           : ((d2y - d1y - 1) * 12) + (13 - d1m) + d2m
       dateDiff = (Math.ceil((yToM / 12) * 10) / 10).toString()
 
-      return dateDiff.includes('.') ? (dateDiff.split('.')[0] + 'y ' + dateDiff.split('.')[1] + 'm') : (dateDiff + 'y')
+      return dateDiff.includes('.') ? (dateDiff.split('.')[0] + (dateDiff.split('.')[0] === '0' || dateDiff.split('.')[0] === '1' ? ' year ' : ' years ') + dateDiff.split('.')[1] + (dateDiff.split('.')[1] === '0' || dateDiff.split('.')[1] === '1' ? ' month' : ' months')) : (dateDiff + 'y')
     } else return ''
   }
 
@@ -435,8 +435,11 @@ export function Heading({
       {
         period &&
           <div className="flex items-center">
-            <div className="px-2.5 py-0.5 text-base font-normal tracking-wider rounded-md border-2 border-l-500/50 bg-l-300/30 text-l-600">
-              + { getDateDiff(startPeriod, endPeriod) !== '' && getDateDiff(startPeriod, endPeriod) }
+            <div className="text-sm font-normal tracking-wider flex items-center rounded-md overflow-hidden bg-l-600 text-l-100">
+              <div className="px-2.5 py-1 text-l-100 bg-h-main">Total</div>
+              <div className="px-3.5 py-1">
+                { getDateDiff(startPeriod, endPeriod) !== '' && getDateDiff(startPeriod, endPeriod) }
+              </div>
             </div>
           </div>
       }
