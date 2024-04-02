@@ -6,8 +6,8 @@ const nexumeConfig = {
 	 * description: string
 	 * icon:        string,
 	 */
-	title: "Taedonn's resume",
-	description: "Taedonn's resume using next.js",
+	title: "John Doe's resume",
+	description: "John Doe's resume using next.js",
 	icon: 'undefined',
 
 	/**

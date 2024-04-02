@@ -14,21 +14,24 @@ const {
 const defaultMain = {
   paddingTop: 0,
   paddingBottom: 0,
+  paddingX: 0,
 }
 
 interface Main {
   children: React.ReactNode,
   paddingTop?: number,
   paddingBottom?: number,
+  paddingX?: number,
 }
 
 export const Main = ({
   children,
   paddingTop=defaultMain.paddingTop,
   paddingBottom=defaultMain.paddingBottom,
+  paddingX=defaultMain.paddingX,
 }: Main) => {
   return (
-    <main className={`pt-${paddingTop} pb-${paddingBottom} w-full flex justify-center`}>
+    <main className={`pt-${paddingTop} pb-${paddingBottom} px-${paddingX} w-full flex justify-center`}>
       <div style={{maxWidth: width}} className="w-full flex flex-col">
         {children}
       </div>
@@ -41,26 +44,30 @@ export const Main = ({
  * 
  * padding: number *Compatible only with padding properties of tailwind CSS. Check out https://tailwindcss.com/docs/padding for details.
  * border:  boolean *If true, border-bottom will be applied.
+ * gap: number *Compatible only with gap properties of tailwind CSS. Check out https://tailwindcss.com/docs/gap for details.
  */
 const defaultProfileProvider = {
   paddingTop: 0,
   paddingBottom: 0,
+  gap: 0,
 }
 
 interface ProfileProvider {
   children: React.ReactNode,
   paddingTop?: number,
   paddingBottom?: number,
+  gap?: number,
 }
 
 export function ProfileProvider({
   children,
   paddingTop=defaultProfileProvider.paddingTop,
   paddingBottom=defaultProfileProvider.paddingBottom,
+  gap=defaultProfileProvider.gap,
 }: ProfileProvider) {
   return (
     <div
-      className={`flex pt-${paddingTop} pb-${paddingBottom} border-b border-l-300`}
+      className={`flex flex-col lg:flex-row gap-${gap} pt-${paddingTop} pb-${paddingBottom} border-b border-l-300`}
     >
       {children}
     </div>
@@ -96,7 +103,7 @@ export function ProfileImg({
         width: width,
         height: width,
       }}
-      className={`relative shrink-0 overflow-hidden rounded-${rounded}`}
+      className={`relative shrink-0 overflow-hidden rounded-${rounded} bg-l-300`}
     >
       <Image src={src} alt="Profile image" fill priority={true} sizes="100%" className="object-cover"/>
     </div>
@@ -125,7 +132,7 @@ export function ProfileInfo({
   marginRight=defaultProfileInfo.marginRight,
 }: ProfileInfo) {
   return (
-    <div className={`flex flex-col ml-${marginLeft} mr-${marginRight}`}>
+    <div className={`flex flex-col mt-${marginLeft} ml-${marginLeft} mr-${marginRight}`}>
       {children}
     </div>
   )
@@ -198,25 +205,29 @@ export function IconProvider({
  * Skill provider
  * 
  * padding: number *Compatible only with padding properties of tailwind CSS. Check out https://tailwindcss.com/docs/padding for details.
+ * gap: number *Compatible only with gap properties of tailwind CSS. Check out https://tailwindcss.com/docs/gap for details.
  */
 const defaultSkillProvider = {
   paddingTop: 6,
   paddingBottom: 6,
+  gap: 0,
 }
 
 interface SkillProvider {
   children: React.ReactNode,
   paddingTop?: number,
   paddingBottom?: number,
+  gap?: number,
 }
 
 export function SkillProvider({
   children,
   paddingTop=defaultSkillProvider.paddingTop,
   paddingBottom=defaultSkillProvider.paddingBottom,
+  gap=defaultSkillProvider.gap,
 }: SkillProvider) {
   return (
-    <div className={`w-full flex pt-${paddingTop} pb-${paddingBottom} border-b border-l-300`}>{children}</div>
+    <div className={`w-full flex flex-col lg:flex-row gap-${gap} pt-${paddingTop} pb-${paddingBottom} border-b border-l-300`}>{children}</div>
   )
 }
 
@@ -240,7 +251,7 @@ export function SkillTitle({
   fontSize=defaultSkillTitle.fontSize,
 }: SkillTitle) {
   return (
-    <div className={`w-44 shrink-0 text-${fontSize} text-l-700`}>{children}</div>
+    <div className={`w-40 shrink-0 text-${fontSize} text-l-700`}>{children}</div>
   )
 }
 
@@ -409,16 +420,16 @@ export function Heading({
           : ((d2y - d1y - 1) * 12) + (13 - d1m) + d2m
       dateDiff = (Math.ceil((yToM / 12) * 10) / 10).toString()
 
-      return dateDiff.includes('.') ? (dateDiff.split('.')[0] + (dateDiff.split('.')[0] === '0' || dateDiff.split('.')[0] === '1' ? ' year ' : ' years ') + dateDiff.split('.')[1] + (dateDiff.split('.')[1] === '0' || dateDiff.split('.')[1] === '1' ? ' month' : ' months')) : (dateDiff + 'y')
+      return dateDiff.includes('.') ? (dateDiff.split('.')[0] + (dateDiff.split('.')[0] === '0' || dateDiff.split('.')[0] === '1' ? 'y ' : 'ys ') + dateDiff.split('.')[1] + 'm') : (dateDiff + 'y')
     } else return ''
   }
 
   return (
-    <h1 className={`text-${fontSize} font-${fontWeight} mt-${marginTop} mb-${marginBottom} flex gap-2.5 text-l-700`}>
+    <h1 className={`text-${fontSize} font-${fontWeight} mt-${marginTop} mb-${marginBottom} flex flex-col lg:flex-row gap-4 text-l-700`}>
       {children}
       {
         tooltip &&
-          <div className="relative cursor-pointer group">
+          <div className="w-max relative cursor-pointer group">
             <i className="fa-solid fa-circle-question absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 duration-200"></i>
             <i className="fa-regular fa-circle-question group-hover:scale-0 group-hover:opacity-0 duration-200"></i>
             {
@@ -435,9 +446,9 @@ export function Heading({
       {
         period &&
           <div className="flex items-center">
-            <div className="text-sm font-normal tracking-wider flex items-center rounded-md overflow-hidden bg-l-600 text-l-100">
-              <div className="px-2.5 py-1 text-l-100 bg-h-main">Total</div>
-              <div className="px-3.5 py-1">
+            <div className="text-sm font-normal tracking-wider flex items-center rounded-md overflow-hidden bg-h-main text-l-100">
+              <div className="px-2 py-1 text-l-100 bg-l-600">Total</div>
+              <div className="px-2 py-1">
                 { getDateDiff(startPeriod, endPeriod) !== '' && getDateDiff(startPeriod, endPeriod) }
               </div>
             </div>
@@ -521,5 +532,117 @@ export function Anchor({
       <span className="rounded-md border-2 border-h-transparent group-hover:border-h-main duration-200">{children}</span>
       <i className="fa-solid fa-link ml-1 text-xs"></i>
     </Link>
+  )
+}
+
+/**
+ * Experience provider
+ * 
+ * padding: number *Compatible only with padding properties of tailwind CSS. Check out https://tailwindcss.com/docs/padding for details.
+ */
+const defaultExperienceProvider = {
+  marginTop: 0,
+  marginBottom: 0,
+}
+
+interface ExperienceProvider {
+  children: React.ReactNode,
+  marginTop?: number,
+  marginBottom?: number,
+}
+
+export function ExperienceProvider({
+  children,
+  marginTop=defaultExperienceProvider.marginTop,
+  marginBottom=defaultExperienceProvider.marginBottom,
+}: ExperienceProvider) {
+  return (
+    <div className={`w-full flex pt-${marginTop} pb-${marginBottom}`}>
+      {children}
+    </div>
+  )
+}
+
+/**
+ * Experience Left
+ * 
+ * companyName: string
+ * companyLogo: string
+ * position: string
+ * workPeriod: string
+ */
+const defaultExperienceLeft = {
+  companyName: '',
+  companyLogo: '',
+  position: '',
+  workPeriod: '',
+}
+
+interface ExperienceLeft {
+  companyName?: string,
+  companyLogo?: string,
+  position?: string,
+  workPeriod?: string,
+}
+
+export function ExperienceLeft({
+  companyName=defaultExperienceLeft.companyName,
+  companyLogo=defaultExperienceLeft.companyLogo,
+  position=defaultExperienceLeft.position,
+  workPeriod=defaultExperienceLeft.workPeriod,
+}: ExperienceLeft) {
+  return (
+    <div className='w-full lg:w-1/3 shrink-0 flex flex-col lg:flex-row gap-4'>
+      <div className='flex flex-col gap-3 text-l-700'>
+        {
+          companyName !== '' &&
+            <div className='w-fit text-lg pl-2 pr-5 font-medium flex items-center rounded-full border-2 border-h-main/50 bg-h-main/10 text-h-main'>
+              <div className='w-10 h-10 flex justify-center items-center'>
+                <div className='w-5 h-5 relative'>
+                  {
+                    companyLogo !== ''
+                      ? <Image src={companyLogo} alt="Company logo" fill priority={true} sizes="100%"/>
+                      : <svg className='w-full h-full fill-h-main' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M64 48c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16h80V400c0-26.5 21.5-48 48-48s48 21.5 48 48v64h80c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H64zM0 64C0 28.7 28.7 0 64 0H320c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm88 40c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16H104c-8.8 0-16-7.2-16-16V104zM232 88h48c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16H232c-8.8 0-16-7.2-16-16V104c0-8.8 7.2-16 16-16zM88 232c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16H104c-8.8 0-16-7.2-16-16V232zm144-16h48c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16H232c-8.8 0-16-7.2-16-16V232c0-8.8 7.2-16 16-16z"/></svg>
+                  }
+                </div>
+              </div>
+              {companyName}
+            </div>
+        }
+        <div className='flex flex-col gap-1.5 pl-2'>
+          {
+            position !== '' &&
+              <div>{position}</div>
+          }
+          {
+            workPeriod !== '' &&
+              <div className='text-sm text-l-500'>{workPeriod}</div>
+          }
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/**
+ * Experience Right
+ * 
+ * 
+ */
+const defaultExperienceRight = {
+  
+}
+
+interface ExperienceRight {
+  
+}
+
+export function ExperienceRight({
+  
+}: ExperienceRight) {
+  return (
+    <div className='w-full flex flex-col lg:flex-row gap-4'>
+      
+    </div>
   )
 }

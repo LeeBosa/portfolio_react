@@ -12,27 +12,29 @@ import {
   Heading,
   Paragraph,
   Anchor,
+  ExperienceProvider,
+  ExperienceLeft
 } from '@/modules/nodes'
 
 export default function Home() {
   return (
-    <Main paddingTop={16} paddingBottom={16}>
-      <ProfileProvider paddingBottom={8}>
+    <Main paddingTop={16} paddingBottom={16} paddingX={5}>
+      <ProfileProvider paddingBottom={8} gap={16}>
         <ProfileImg src='/profile_img.png' rounded='lg'/>
-        <ProfileInfo marginLeft={16}>
-          <Heading fontSize='4xl'>Taedonn</Heading>
-          <Paragraph fontSize='xl' marginTop={1.5}>Frontend developer</Paragraph>
+        <ProfileInfo>
+          <Heading fontSize='4xl'>John Doe</Heading>
+          <Paragraph fontSize='xl' marginTop={1.5}>Developer</Paragraph>
           <Callout color='main' paddingX={6} paddingY={5} marginTop={3} rounded='lg'>
             <IconProvider icon='github' iconEffect>
-              <Anchor href='https://github.com/taedonn' target='_blank'>https://github.com/taedonn</Anchor>
+              <Anchor href='https://github.com/myrepo' target='_blank'>https://github.com/myrepo</Anchor>
             </IconProvider>
             <IconProvider icon='web' marginTop={1.5} iconEffect>
-              <Anchor href='https://taedonn.com' target='_blank'>https://taedonn.com</Anchor>
+              <Anchor href='https://myportfolio.com' target='_blank'>https://myportfolio.com</Anchor>
             </IconProvider>
           </Callout>
           <Callout paddingX={6} paddingY={5} marginTop={3} rounded='lg'>
-            <IconProvider icon='address'>Seoul, Korea</IconProvider>
-            <IconProvider icon='email' marginTop={1.5}>taedonn@taedonn.com</IconProvider>
+            <IconProvider icon='address'>California, United States</IconProvider>
+            <IconProvider icon='email' marginTop={1.5}>example@example.com</IconProvider>
           </Callout>
         </ProfileInfo>
       </ProfileProvider>
@@ -54,16 +56,16 @@ export default function Home() {
         in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
       </Paragraph>
       <Heading marginTop={20} marginBottom={3} tooltip tooltipMsg={'Developing : grey<br/>Production : purple'}>Skills</Heading>
-      <SkillProvider paddingTop={3}>
+      <SkillProvider paddingTop={3} gap={4}>
         <SkillTitle>Languages</SkillTitle>
         <SkillList>
           <Skill icon='square-js' fill>JavaScript</Skill>
-          <Skill icon='java'>Java</Skill>
           <Skill>TypeScript</Skill>
-          <Skill>HTML/CSS</Skill>
+          <Skill icon='html5'>HTML/CSS</Skill>
+          <Skill icon='java'>Java</Skill>
         </SkillList>
       </SkillProvider>
-      <SkillProvider>
+      <SkillProvider gap={4}>
         <SkillTitle>Frameworks</SkillTitle>
         <SkillList>
           <Skill icon='node-js' fill>Node.js</Skill>
@@ -72,7 +74,7 @@ export default function Home() {
           <Skill>Nuxt.js</Skill>
         </SkillList>
       </SkillProvider>
-      <SkillProvider>
+      <SkillProvider gap={4}>
         <SkillTitle>Libraries</SkillTitle>
         <SkillList>
           <Skill icon='react' fill>React</Skill>
@@ -82,17 +84,19 @@ export default function Home() {
           <Skill>Pinia</Skill>
           <Skill>Axios</Skill>
           <Skill>Next Auth</Skill>
-          <Skill>Json Web Token</Skill>
+          <Skill>JSON Web Tokens</Skill>
         </SkillList>
       </SkillProvider>
-      <SkillProvider>
+      <SkillProvider gap={4}>
         <SkillTitle>Databases</SkillTitle>
         <SkillList>
-          <Skill fill>Prisma</Skill>
+          <Skill fill>MySQL</Skill>
+          <Skill>NoSQL</Skill>
+          <Skill>Prisma</Skill>
           <Skill>Firebase</Skill>
         </SkillList>
       </SkillProvider>
-      <SkillProvider>
+      <SkillProvider gap={4}>
         <SkillTitle>Tools & IDEs</SkillTitle>
         <SkillList>
           <Skill icon='git-alt' fill>Git</Skill>
@@ -102,14 +106,21 @@ export default function Home() {
           <Skill>VSCode</Skill>
         </SkillList>
       </SkillProvider>
-      <SkillProvider>
+      <SkillProvider gap={4}>
         <SkillTitle>AWS</SkillTitle>
         <SkillList>
           <Skill icon='aws'>Amazon S3</Skill>
           <Skill icon='aws'>Amazon API Gateway</Skill>
         </SkillList>
       </SkillProvider>
-      <Heading marginTop={20} marginBottom={3} period startPeriod='2021-12'>Experiences</Heading>
+      <Heading marginTop={20} marginBottom={5} period startPeriod='2019-08'>Experiences</Heading>
+      <ExperienceProvider>
+        <ExperienceLeft
+          companyName='Company name'
+          position='Junior developer'
+          workPeriod='2019.08 ~'
+        />
+      </ExperienceProvider>
     </Main>
   )
 }
