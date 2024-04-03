@@ -4,6 +4,7 @@ import nexumeConfig from "../../nexume.config"
 
 const {
 	width,
+	profileImg
 } = nexumeConfig
 
 export default function Home() {
@@ -42,7 +43,7 @@ export default function Home() {
 				{/* Title */}
 				<section className="flex flex-col lg:flex-row gap-16 pb-8 border-b border-l-e">
 					<div className="w-56 h-56 relative shrink-0 overflow-hidden rounded-lg bg-l-e">
-						<Image src="/profile_img.png" alt="Profile image" fill priority={true} sizes="100%" className="object-cover"/>
+						<Image src={profileImg} alt="Profile image" fill priority={true} sizes="100%" className="object-cover"/>
 					</div>
 					<div>
 						<h1 className="text-4xl font-semibold">John Doe</h1>
