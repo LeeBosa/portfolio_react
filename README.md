@@ -14,7 +14,7 @@
   - [public](#public)
   - [app](#app)
   - [out](#out)
-  - [nexume.config.ts](#nexume.config.ts)
+- [Config options](#config-options)
 - [License](#license)
 
 -----
@@ -106,8 +106,7 @@ Most hosting platforms allow you to define `build` command and `output` folder:
 
 - `public`: Contains all publicly accessible images (`favicon.ico`, `profile_img.png`)
 - `app`: Contains all tsx files (`page.tsx`, `layout.tsx`)
-- `out`: Contains all static build files (`html`, `js`, `css`)
-- `nexume.config.ts`: Contains nexume config options (`title`, `description`, `icon`)
+- `out`: Contains all static assets (`html`, `js`, `css`)
 
 > See complete documentation at [Next.js project structure](https://nextjs.org/docs/getting-started/project-structure).
 
@@ -137,11 +136,17 @@ This allows you to deploy this project on any hosting platform that serve static
 
 Broken down static assets are all stored inside `out` folder in the root directory.
 
-### `nexume.config.ts`
+-----
+
+## Config options
 
 Some configurable options are stored inside `nexume.config.ts` in the root directory.
 
-`nexume.config.ts` is made to offer easier customization of some configurable options.
+This config file is made to offer easier customization of some configurable options.
+
+### Types
+
+
 
 -----
 
