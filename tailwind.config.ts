@@ -8,7 +8,7 @@ const config = {
     extend: {
       colors: {
         h: {
-          main: nexumeConfig.themeColor,
+          main: nexumeConfig.color,
         },
         l: {
           'e': '#E0E0E0',

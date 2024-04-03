@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Nexume
 
-## Getting Started
+![Node](https://img.shields.io/badge/node-v18.+-%238A5CF5)
+![Build](https://img.shields.io/badge/build-nextjs%20v14.+-%238A5CF5)
+![Release](https://img.shields.io/github/v/release/taedonn/nexume?color=8A5CF5)
+![Release data](https://img.shields.io/github/release-date/taedonn/nexume?color=8A5CF5)
+![License](https://img.shields.io/badge/license-MIT-%238A5CF5)
 
-First, run the development server:
+`nexume` is a static resume template using next.js and tailwind CSS.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Getting started
+
+`nexume` can be installed by running the following `npx` command.
+
+```
+npx create-nexume-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> This will generate a build folder containing basic `nexume` template.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Before installing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Make sure node.js v18+ is installed on your machine.
 
-## Learn More
+```bash
+node -v
+```
 
-To learn more about Next.js, take a look at the following resources:
+if node version is below 18, you can run one of the following commands to upgrade or change node version.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> Homebrew:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+# Install node version using homebrew.
+brew install node@18
 
-## Deploy on Vercel
+# Unlink previously used node version.
+brew unlink node
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Link newly installed node version.
+brew link node@18
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> nvm:
+
+```bash
+# Install node version using nvm.
+nvm install v18.12.0
+
+# Choose newly installed node version.
+nvm use v18.12.0
+```
+
+> sudo:
+
+```bash
+# Install node version using sudo.
+sudo n 18.12.0
+
+# Choose newly installed node version on drop-down menu.
+sudo n
+```
