@@ -1,7 +1,6 @@
 # Nexume
 
 ![Node](https://img.shields.io/badge/node-v18.+-%238A5CF5)
-![Build](https://img.shields.io/badge/build-nextjs%20v14.+-%238A5CF5)
 ![Release](https://img.shields.io/github/v/release/taedonn/nexume?color=8A5CF5)
 ![Release data](https://img.shields.io/github/release-date/taedonn/nexume?color=8A5CF5)
 ![License](https://img.shields.io/badge/license-MIT-%238A5CF5)
@@ -11,6 +10,7 @@
 - [Getting started](#getting-started)
 - [Before installing](#before-installing)
 - [Deploying your app](#deploying-your-app)
+- [License](#license)
 
 -----
 
@@ -92,6 +92,10 @@ Most hosting platforms allow you to define `build` command and `output` folder.
     </td>
   </tr>
 </table>
+
+-----
+
+## Page structure
 
 -----
 
