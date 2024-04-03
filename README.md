@@ -16,7 +16,7 @@
 npx create-nexume-app
 ```
 
-> This will generate a build folder containing basic `nexume` template.
+> This will generate a folder containing basic `nexume` template.
 
 -----
 
