@@ -5,7 +5,7 @@
 ![Release data](https://img.shields.io/github/release-date/taedonn/nexume?color=8A5CF5)
 ![License](https://img.shields.io/badge/license-MIT-%238A5CF5)
 
-`nexume` is a static resume template using [Next.js](https://github.com/vercel/next.js) and [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss).
+`nexume` is a simple static resume template using [Next.js](https://github.com/vercel/next.js) and [TypeScript](https://github.com/microsoft/TypeScript).
 
 - [Getting started](#getting-started)
 - [Before installing](#before-installing)
