@@ -16,7 +16,9 @@
 npx create-nexume-app
 ```
 
-This will generate a build folder containing basic `nexume` template.
+> This will generate a build folder containing basic `nexume` template.
+
+-----
 
 ## Before installing
 
@@ -26,7 +28,9 @@ Make sure `node.js` version over 18 is installed on your machine.
 node -v
 ```
 
-if node version is below 18, you can run one of the following commands to upgrade or change node version.
+> if node version is below 18, you can run one of the following commands to upgrade or change node version.
+
+-----
 
 `Homebrew`
 
