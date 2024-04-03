@@ -13,7 +13,8 @@ import {
   Paragraph,
   Anchor,
   ExperienceProvider,
-  ExperienceLeft
+  ExperienceLeft,
+  ExperienceRight
 } from '@/modules/nodes'
 
 export default function Home() {
@@ -120,6 +121,9 @@ export default function Home() {
           position='Junior developer'
           workPeriod='2019.08 ~'
         />
+        <ExperienceRight gap={4}>
+          <Paragraph fontSize='lg' fontWeight='medium'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Paragraph>
+        </ExperienceRight>
       </ExperienceProvider>
     </Main>
   )

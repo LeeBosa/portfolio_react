@@ -496,7 +496,7 @@ export function Paragraph({
   marginBottom=defaultParagraph.marginBottom,
 }: Paragraph) {
   return (
-    <p className={`text-${fontSize} font-${fontWeight} tracking-${letterSpacing} ${wordBreak === 'keep' ? 'break-keep' : 'break-all'} mt-${marginTop} mb-${marginBottom} text-l-600`}>
+    <p className={`text-${fontSize} font-${fontWeight} tracking-${letterSpacing} ${wordBreak === 'keep' ? 'break-keep' : 'break-all'} mt-${marginTop} mb-${marginBottom} text-l-700`}>
       {children}
     </p>
   )
@@ -627,22 +627,22 @@ export function ExperienceLeft({
 /**
  * Experience Right
  * 
- * 
+ * gap: number
  */
 const defaultExperienceRight = {
-  
+  gap: 0,
 }
 
 interface ExperienceRight {
-  
+  children: React.ReactNode,
+  gap?: number,
 }
 
 export function ExperienceRight({
-  
+  children,
+  gap=defaultExperienceRight.gap,
 }: ExperienceRight) {
   return (
-    <div className='w-full flex flex-col lg:flex-row gap-4'>
-      
-    </div>
+    <div className={`w-full flex flex-col lg:flex-row gap-${gap}`}>{children}</div>
   )
 }
