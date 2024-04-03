@@ -30,8 +30,6 @@ node -v
 
 > if node version is below 18, you can run one of the following commands to upgrade or change node version.
 
------
-
 `Homebrew`
 
 ```bash
