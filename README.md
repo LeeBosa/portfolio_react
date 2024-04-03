@@ -6,7 +6,7 @@
 ![Release data](https://img.shields.io/github/release-date/taedonn/nexume?color=8A5CF5)
 ![License](https://img.shields.io/badge/license-MIT-%238A5CF5)
 
-`nexume` is a static resume template using next.js and tailwind CSS.
+`nexume` is a static resume template using [Next.js](https://github.com/vercel/next.js) and [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss).
 
 ## Getting started
 
@@ -16,11 +16,11 @@
 npx create-nexume-app
 ```
 
-> This will generate a build folder containing basic `nexume` template.
+This will generate a build folder containing basic `nexume` template.
 
 ## Before installing
 
-Make sure node.js v18+ is installed on your machine.
+Make sure `node.js` version over 18 is installed on your machine.
 
 ```bash
 node -v
@@ -28,7 +28,7 @@ node -v
 
 if node version is below 18, you can run one of the following commands to upgrade or change node version.
 
-> Homebrew:
+`Homebrew`
 
 ```bash
 # Install node version using homebrew.
@@ -41,7 +41,7 @@ brew unlink node
 brew link node@18
 ```
 
-> nvm:
+`nvm`
 
 ```bash
 # Install node version using nvm.
@@ -51,7 +51,7 @@ nvm install v18.12.0
 nvm use v18.12.0
 ```
 
-> sudo:
+`sudo`
 
 ```bash
 # Install node version using sudo.
