@@ -8,7 +8,7 @@ const nexumeConfig = {
 	 */
 	title: "John Doe's resume",
 	description: "John Doe's resume using next.js",
-	icon: 'undefined',
+	icon: '/favicon.ico',
 
 	/**
 	 * Layout
@@ -20,4 +20,4 @@ const nexumeConfig = {
 	themeColor: '#8A5CF5',
 }
 
-module.exports = nexumeConfig
+export default nexumeConfig
