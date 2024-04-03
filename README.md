@@ -10,6 +10,11 @@
 - [Getting started](#getting-started)
 - [Before installing](#before-installing)
 - [Deploying your app](#deploying-your-app)
+- [Folder structure](#folder-structure)
+  - [public](#public)
+  - [app](#app)
+  - [out](#out)
+  - [nexume.config.ts](#nexume.config.ts)
 - [License](#license)
 
 -----
@@ -73,7 +78,7 @@ sudo n
 
 ## Deploying your app
 
-Most hosting platforms allow you to define `build` command and `output` folder. 
+Most hosting platforms allow you to define `build` command and `output` folder:
 
 - Build command: `npm run build` or `next build`
 - Output folder: `out`
@@ -95,7 +100,48 @@ Most hosting platforms allow you to define `build` command and `output` folder.
 
 -----
 
-## Page structure
+## Folder structure
+
+`nexume` requires a precise folder structure:
+
+- `public`: Contains all publicly accessible images (`favicon.ico`, `profile_img.png`)
+- `app`: Contains all tsx files (`page.tsx`, `layout.tsx`)
+- `out`: Contains all static build files (`html`, `js`, `css`)
+- `nexume.config.ts`: Contains nexume config options (`title`, `description`, `icon`)
+
+> See complete documentation at [Next.js project structure](https://nextjs.org/docs/getting-started/project-structure).
+
+### `public`
+
+Next.js serve static assets inside a folder called `public` in the root directory. 
+
+Files inside `public` can be referenced starting from the base url(/).
+
+For example, if you want to reference `/public/profile_img.png` in your code, 
+
+you can do so by writing `/profile_img.png` as path.
+
+### `app`
+
+Next.js introduced `app router` in version 13, which argues to offer improved route handling.
+
+It will be unnecessary to get into details of `app routing` in this doc, since `nexume` only offers single page resume template.
+
+> You can explore more about `app routing` at [App Router | Next.js](https://nextjs.org/docs/app/building-your-application/routing#advanced-routing-patterns)
+
+### `out`
+
+Next.js allow you to export static files by breaking a strict SPA into individual HTML files.
+
+This allows you to deploy this project on any hosting platform that serve static HTML/CSS/JS files.
+
+Broken down static assets are all stored inside `out` folder in the root directory.
+
+### `nexume.config.ts`
+
+Some configurable options are stored inside `nexume.config.ts` in the root directory.
+
+`nexume.config.ts` is made to offer easier customization of some configurable options.
 
 -----
 
