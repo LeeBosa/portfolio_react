@@ -6,7 +6,7 @@ import path from "path";
 
 const runCommand = (command) => {
     try {
-        execSync(`${command}`, { stdio: "inherit" });
+        execSync(command, { stdio: "inherit" });
 
         return true;
     } catch (err) {
