@@ -7,16 +7,17 @@
 
 `nexume` is a simple and static resume template using [Next.js](https://github.com/vercel/next.js) and [TypeScript](https://github.com/microsoft/TypeScript).
 
-- [Getting started](#getting-started)
-- [Before installing](#before-installing)
-- [Deploying your app](#deploying-your-app)
-- [Folder structure](#folder-structure)
-  - [public](#public)
-  - [app](#app)
-  - [out](#out)
-- [Config](#config)
-  - [Options](#options)
-- [License](#license)
+- [Nexume](#nexume)
+  - [Getting started](#getting-started)
+  - [Before installing](#before-installing)
+  - [Deploying your app](#deploying-your-app)
+  - [Folder structure](#folder-structure)
+    - [`public`](#public)
+    - [`app`](#app)
+    - [`out`](#out)
+  - [Config](#config)
+    - [Options](#options)
+  - [License](#license)
 
 -----
 
@@ -25,7 +26,7 @@
 `nexume` can be installed by running the following `npx` command.
 
 ```
-npx create-nexume-app
+npx create-nexume-app <my-app>
 ```
 
 > This will generate a folder containing basic `nexume` template.
