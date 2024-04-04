@@ -1,6 +1,9 @@
 {
   "name": "create-nexume-app",
   "version": "0.0.0",
+  "bin": {
+    "create-nexume-app": "cli.mjs"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
