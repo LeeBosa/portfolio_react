@@ -5,7 +5,7 @@
 ![Release data](https://img.shields.io/github/release-date/taedonn/nexume?color=8A5CF5)
 ![License](https://img.shields.io/badge/license-MIT-%238A5CF5)
 
-`nexume` is a simple static resume template using [Next.js](https://github.com/vercel/next.js) and [TypeScript](https://github.com/microsoft/TypeScript).
+`nexume` is a simple and static resume template using [Next.js](https://github.com/vercel/next.js) and [TypeScript](https://github.com/microsoft/TypeScript).
 
 - [Getting started](#getting-started)
 - [Before installing](#before-installing)
@@ -14,7 +14,8 @@
   - [public](#public)
   - [app](#app)
   - [out](#out)
-- [Config options](#config-options)
+- [Config](#config)
+  - [Options](#options)
 - [License](#license)
 
 -----
@@ -138,15 +139,22 @@ Broken down static assets are all stored inside `out` folder in the root directo
 
 -----
 
-## Config options
+## Config
 
 Some configurable options are stored inside `nexume.config.ts` in the root directory.
 
-This config file is made to offer easier customization of some configurable options.
+This config file is made to offer easier customization of some basic layout of the template.
 
-### Types
+### Options
 
-
+| name        | type    | default                         | description                                   |
+|:----------- |:-------:|:------------------------------- |:--------------------------------------------- |
+| title       | string  | John Doe's resume               | Title of the page.                            |
+| description | string  | John Doe's resume using nexume. | Description metadata of the page.             |
+| icon        | string  | /favicon.ico                    | Icon file path.                               |
+| profileImg  | string  | /profile_img.png                | Profile image file path.                      |
+| width       | integer | 794                             | Maximum width of the content.                 |
+| themeColor  | string  | #845CF5                         | Hex color code used as the basic theme color. |
 
 -----
 
