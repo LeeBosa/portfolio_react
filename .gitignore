@@ -1,14 +1,2 @@
 # dependencies
 node_modules
-
-# next.js
-.next
-
-# production
-out
-
-# typescript
-next-env.d.ts
-
-# nexume
-bin
