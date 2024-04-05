@@ -1,8 +1,15 @@
 {
   "name": "create-nexume-app",
-  "version": "0.0.0",
+  "version": "0.0.3",
+  "description": "A simple and static resume template using Next.js and TypeScript.",
+  "author": "taedonn",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taedonn/nexume.git"
+  },
   "bin": {
-    "create-nexume-app": "cli.mjs"
+    "create-nexume-app": "./bin/cli.mjs"
   },
   "scripts": {
     "dev": "next dev",
@@ -11,6 +18,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "chalk": "^5.3.0",
     "next": "^14.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

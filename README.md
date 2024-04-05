@@ -1,8 +1,7 @@
 # Nexume
 
 ![Node](https://img.shields.io/badge/node-v18.+-%238A5CF5)
-![Release](https://img.shields.io/github/v/release/taedonn/nexume?color=8A5CF5)
-![Release data](https://img.shields.io/github/release-date/taedonn/nexume?color=8A5CF5)
+![NPM](https://img.shields.io/npm/v/create-nexume-app?color=8A5CF5)
 ![License](https://img.shields.io/badge/license-MIT-%238A5CF5)
 
 `nexume` is a simple and static resume template using [Next.js](https://github.com/vercel/next.js) and [TypeScript](https://github.com/microsoft/TypeScript).
