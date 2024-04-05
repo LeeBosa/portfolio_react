@@ -153,9 +153,11 @@ This config file is made to offer easier customization of some basic layout of t
 | title       | string  | John Doe's resume               | Title of the page.                            |
 | description | string  | John Doe's resume using nexume. | Description metadata of the page.             |
 | icon        | string  | /favicon.ico                    | Icon file path.                               |
+| images      | string  | /og_img.png                     | Meta img path.                                |
+| url         | string  | https://localhost:3000          | Public url.                                   |
 | profileImg  | string  | /profile_img.png                | Profile image file path.                      |
 | width       | integer | 794                             | Maximum width of the content.                 |
-| themeColor  | string  | #845CF5                         | Hex color code used as the basic theme color. |
+| color       | string  | #845CF5                         | Hex color code used as the basic theme color. |
 
 -----
 
