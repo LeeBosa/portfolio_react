@@ -1,12 +1,25 @@
 import type { Metadata } from 'next'
 import { Montserrat } from "next/font/google"
-import nexumeConfig from '../../nexume.config'
+import nexumeConfig from '~/nexume.config'
 import '@/css/tailwind.css'
 
+const { meta } = nexumeConfig
+
 export const metadata: Metadata = {
-	title: nexumeConfig.title,
-	description: nexumeConfig.description,
-	icons: { icon: nexumeConfig.icon }
+	metadataBase: new URL(meta.url),
+	title: meta.title ? meta.title : '',
+	description: meta.description ? meta.description : '',
+	icons: { icon: meta.icon ? meta.icon: '' },
+	openGraph: {
+		title: meta.title ? meta.title : '',
+		description: meta.description ? meta.description : '',
+		images: meta.images ? meta.images : ''
+	},
+	twitter: {
+		title: meta.title ? meta.title : '',
+		description: meta.description ? meta.description : '',
+		images: [meta.images ? meta.images : '']
+	}
 }
 
 const montserrat = Montserrat({ subsets: ['latin'] })

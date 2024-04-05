@@ -1,11 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
-import nexumeConfig from "../../nexume.config"
+import nexumeConfig from "~/nexume.config"
 
-const {
-	width,
-	profileImg
-} = nexumeConfig
+const { layout } = nexumeConfig
 
 export default function Home() {
 	const getDateDiff = (d1: string, d2: string) => {
@@ -38,13 +35,16 @@ export default function Home() {
 
 	return (
 		<main className="pt-16 pb-8 px-5 w-full flex justify-center leading-normal tracking-wide text-l-2">
-			<div style={{maxWidth: width}} className="w-full">
+			<div style={{maxWidth: layout.width ? layout.width : 794}} className="w-full">
 
 				{/* Title */}
 				<section className="flex flex-col lg:flex-row gap-16 pb-8 border-b border-l-e">
-					<div className="w-56 h-56 relative shrink-0 overflow-hidden rounded-lg bg-l-e">
-						<Image src={profileImg} alt="Profile image" fill priority={true} sizes="100%" className="object-cover"/>
-					</div>
+					{
+						layout.profileImg &&
+						<div className="w-56 h-56 relative shrink-0 overflow-hidden rounded-lg bg-l-e">
+							<Image src={layout.profileImg} alt="Profile image" fill priority={true} sizes="100%" className="object-cover"/>
+						</div>
+					}
 					<div>
 						<h1 className="text-4xl font-semibold">John Doe</h1>
 						<h3 className="text-xl mt-1.5">Developer</h3>

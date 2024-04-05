@@ -1,5 +1,7 @@
 import nexumeConfig from "./nexume.config"
 
+const { layout } = nexumeConfig
+
 const config = {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}'
@@ -8,7 +10,7 @@ const config = {
     extend: {
       colors: {
         h: {
-          main: nexumeConfig.themeColor,
+          main: layout.color ? layout.color : '#8A5CF5',
         },
         l: {
           'e': '#E0E0E0',
