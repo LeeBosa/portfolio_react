@@ -19,7 +19,7 @@ const runCommand = (command) => {
 
 const dirName = process.argv[2];
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/taedonn/nexume.git ${dirName}`;
-const npmInstallCommand = `cd ${dirName} && npm install && npm pkg delete bin`;
+const npmInstallCommand = `cd ${dirName} && npm install && npm pkg delete bin && rm -r bin`;
 
 // Create new create-nexume-app
 console.log(

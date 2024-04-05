@@ -22,13 +22,21 @@
 
 ## Getting started
 
-`nexume` can be installed by running the following `npx` command.
+`nexume` can be installed by running the following commands.
 
+First, install `create-nexume-app` globally.
+
+```bash
+npm i -g create-nexume-app
 ```
+
+Then, run following `npx` command which will generate a folder containg basic nexume template.
+
+```bash
 npx create-nexume-app <my-app>
 ```
 
-> This will generate a folder containing basic `nexume` template.
+> You can then remove globally installed package by running `npm uninstall -g create-nexume-app`.
 
 -----
 

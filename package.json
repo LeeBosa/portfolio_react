@@ -1,6 +1,6 @@
 {
   "name": "create-nexume-app",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A simple and static resume template using Next.js and TypeScript.",
   "author": "taedonn",
   "license": "MIT",
