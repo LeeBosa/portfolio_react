@@ -1,8 +1,7 @@
 # Nexume
 
 ![Node](https://img.shields.io/badge/node-v18.+-%238A5CF5)
-![Release](https://img.shields.io/github/v/release/taedonn/nexume?color=8A5CF5)
-![Release data](https://img.shields.io/github/release-date/taedonn/nexume?color=8A5CF5)
+![NPM](https://img.shields.io/npm/v/create-nexume-app?color=8A5CF5)
 ![License](https://img.shields.io/badge/license-MIT-%238A5CF5)
 
 `nexume` is a simple and static resume template using [Next.js](https://github.com/vercel/next.js) and [TypeScript](https://github.com/microsoft/TypeScript).
@@ -23,13 +22,21 @@
 
 ## Getting started
 
-`nexume` can be installed by running the following `npx` command.
+`nexume` can be installed by running the following commands.
 
+First, install `create-nexume-app` globally.
+
+```bash
+npm i -g create-nexume-app
 ```
+
+Then, run following `npx` command which will generate a folder containg basic nexume template.
+
+```bash
 npx create-nexume-app <my-app>
 ```
 
-> This will generate a folder containing basic `nexume` template.
+> You can then remove globally installed package by running `npm uninstall -g create-nexume-app`.
 
 -----
 
@@ -85,20 +92,7 @@ Most hosting platforms allow you to define `build` command and `output` folder:
 - Build command: `npm run build` or `next build`
 - Output folder: `out`
 
-> Make sure your hosting platform options are the same as above.
-
-<table>
-  <tr>
-    <td>
-      <img src="https://nexume.s3.ap-northeast-2.amazonaws.com/readme_deploying_your_app.png" alt="Deploying your app on vercel"/>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <p align=center><a href="https://vercel.com">Vercel</a></p>
-    </td>
-  </tr>
-</table>
+> If you are using [Vercel](https://vercel.com), you don't need to configure any options since vercel will automatically detect output directory.
 
 -----
 
@@ -153,9 +147,11 @@ This config file is made to offer easier customization of some basic layout of t
 | title       | string  | John Doe's resume               | Title of the page.                            |
 | description | string  | John Doe's resume using nexume. | Description metadata of the page.             |
 | icon        | string  | /favicon.ico                    | Icon file path.                               |
+| images      | string  | /og_img.png                     | Meta img path.                                |
+| url         | string  | https://localhost:3000          | Public url.                                   |
 | profileImg  | string  | /profile_img.png                | Profile image file path.                      |
 | width       | integer | 794                             | Maximum width of the content.                 |
-| themeColor  | string  | #845CF5                         | Hex color code used as the basic theme color. |
+| color       | string  | #845CF5                         | Hex color code used as the basic theme color. |
 
 -----
 

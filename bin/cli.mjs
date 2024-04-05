@@ -18,12 +18,12 @@ const runCommand = (command) => {
 };
 
 const dirName = process.argv[2];
-const gitCheckoutCommand = `git clone --depth 1 https://github.com/taedonn/nexume.git ${dirName}`;
+const gitCheckoutCommand = `git clone --depth 1 https://github.com/taedonn/nexume-template.git ${dirName}`;
 const npmInstallCommand = `cd ${dirName} && npm install`;
 
 // Create new create-nexume-app
 console.log(
-    chalk.blueBright(`Creating a new Nexume app in`),
+    chalk.blueBright(`Creating a new nexume app in`),
     chalk.magentaBright.bold.italic.underline(
         `${path.resolve(process.cwd(), dirName)}`,
     ),
@@ -46,39 +46,36 @@ if (!installedDeps) {
 // Inform success and commands to start, build, test, prettier, and lint
 console.log(
     "\n",
-    chalk.greenBright.bold.underline(`Success!`),
+    chalk.greenBright.bold(`Success!`),
     `Created`,
-    chalk.redBright.bold(`${dirName}`),
+    chalk.bold.italic.underline(`${dirName}`),
     `at`,
-    chalk.magentaBright.bold.italic.underline(
+    chalk.bold.italic.underline(
         `${path.resolve(process.cwd(), dirName)}`,
     ),
     "\n\n",
     `Inside`,
-    chalk.redBright.bold(`${dirName}`),
-    `directory, you can run several`,
-    chalk.blueBright.bold.underline(`commands`),
+    chalk.bold.italic.underline(`${dirName}`),
+    `directory, you can run several commands`,
     `:`,
     "\n\n",
-    chalk.yellowBright.bold("  npm run dev"),
+    chalk.greenBright.bold("  npm run dev"),
     "\n",
     "    Starts the dev server",
     "\n\n",
-    chalk.yellowBright.bold("  npm run build"),
+    chalk.greenBright.bold("  npm run build"),
     "\n",
     "    Bundles the app into static files for production",
     "\n\n",
-    chalk.yellowBright.bold("  npm run lint"),
+    chalk.greenBright.bold("  npm run lint"),
     "\n",
     `    This command find and fix problems in your code by`,
     chalk.underline(`${dirName}/.eslintrc.json`),
     "\n\n",
     "We suggest that you begin by typing:",
     "\n\n",
-    chalk.yellowBright.bold(`cd`),
-    chalk.redBright.bold(`${dirName}`),
+    chalk.greenBright.bold(`cd ${dirName} && npm run dev`),
     "\n",
-    chalk.yellowBright.bold("npm run dev"),
     "\n\n",
-    chalk.cyanBright.bold("Enjoy it!"),
+    chalk.greenBright.bold("Enjoy it!"),
 );
